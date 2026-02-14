@@ -11,8 +11,8 @@ function fmtPnl(v) {
 function fmtTs(s) {
   if (!s) return "none";
   const d = new Date(s);
-  if (Number.isNaN(d.getTime())) return String(s);
-  return d.toLocaleString([], { hour: 'numeric', minute: '2-digit', second: '2-digit', month: 'short', day: 'numeric' });
+  if (Number.isNaN(d.getTime())) return "none";
+  return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
 function render(data) {
