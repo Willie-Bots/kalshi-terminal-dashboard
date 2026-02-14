@@ -15,6 +15,7 @@ function render(data) {
   const positions = data.positions || {};
   const trades = data.recent_trades || [];
   const byAsset = perf.by_asset || {};
+  const evalr = data.self_eval || {};
 
   q("system").innerHTML = [
     row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
@@ -34,6 +35,9 @@ function render(data) {
     row("MIN VOLUME", rules.min_volume ?? "?"),
     row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
     row("MAX OPEN", rules.max_open_positions ?? "?"),
+    row("EVAL", evalr.decision || "n/a"),
+    row("EVAL WR", `${evalr.win_rate_pct ?? "?"}%`),
+    row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
   ].join("");
 
   const assetLines = Object.entries(byAsset).map(([a, s]) => {
