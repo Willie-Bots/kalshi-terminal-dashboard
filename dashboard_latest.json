@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T21:19:33.043789Z",
+  "generated_at": "2026-02-14T21:19:46.513063Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -77,31 +77,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T21:19:32.816817Z",
+    "last_updated": "2026-02-14T21:19:46.277424Z",
     "focused_market_count_last_cycle": 3,
     "recent_cycles": [
-      {
-        "time": "2026-02-14T21:17:28.787000Z",
-        "strategy": "spot_edge",
-        "focused_market_count": 1,
-        "open_positions": 0,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -145.0,
-        "unrealized_pnl_cents": 0,
-        "total_pnl_cents": -145.0
-      },
-      {
-        "time": "2026-02-14T21:17:29.901779Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 2,
-        "open_positions": 0,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 71.0,
-        "unrealized_pnl_cents": 0,
-        "total_pnl_cents": 71.0
-      },
       {
         "time": "2026-02-14T21:17:42.382249Z",
         "strategy": "spot_edge",
@@ -360,25 +338,58 @@
         "realized_pnl_cents": 58.0,
         "unrealized_pnl_cents": -2.0,
         "total_pnl_cents": 56.0
+      },
+      {
+        "time": "2026-02-14T21:19:45.142869Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 1,
+        "open_positions": 0,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -145.0,
+        "unrealized_pnl_cents": 0,
+        "total_pnl_cents": -145.0
+      },
+      {
+        "time": "2026-02-14T21:19:46.284239Z",
+        "strategy": "overreaction_reversion",
+        "focused_market_count": 2,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXETH15M-26FEB141630-30",
+            "asset": "ETH",
+            "side": "YES",
+            "entry": 24.0,
+            "score": 1.857,
+            "strategy": "overreaction_reversion"
+          }
+        ],
+        "closed": [
+          {
+            "time": "2026-02-14T21:19:46.276096Z",
+            "ticker": "KXETH15M-26FEB141630-30",
+            "asset": "ETH",
+            "strategy": "overreaction_reversion",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 24.0,
+            "exit": 20.0,
+            "pnl_cents": -4.0,
+            "reason": "stop_loss"
+          }
+        ],
+        "realized_pnl_cents": 54.0,
+        "unrealized_pnl_cents": -2.0,
+        "total_pnl_cents": 52.0
       }
     ],
     "by_strategy": {
       "overreaction_reversion": {
         "active": true,
-        "last_updated": "2026-02-14T21:19:32.816817Z",
+        "last_updated": "2026-02-14T21:19:46.277424Z",
         "focused_market_count_last_cycle": 2,
         "recent_cycles": [
-          {
-            "time": "2026-02-14T21:17:02.322316Z",
-            "strategy": "overreaction_reversion",
-            "focused_market_count": 2,
-            "open_positions": 0,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": 71.0,
-            "unrealized_pnl_cents": 0,
-            "total_pnl_cents": 71.0
-          },
           {
             "time": "2026-02-14T21:17:16.191018Z",
             "strategy": "overreaction_reversion",
@@ -560,27 +571,49 @@
             "realized_pnl_cents": 58.0,
             "unrealized_pnl_cents": -2.0,
             "total_pnl_cents": 56.0
+          },
+          {
+            "time": "2026-02-14T21:19:46.284239Z",
+            "strategy": "overreaction_reversion",
+            "focused_market_count": 2,
+            "open_positions": 2,
+            "opened": [
+              {
+                "ticker": "KXETH15M-26FEB141630-30",
+                "asset": "ETH",
+                "side": "YES",
+                "entry": 24.0,
+                "score": 1.857,
+                "strategy": "overreaction_reversion"
+              }
+            ],
+            "closed": [
+              {
+                "time": "2026-02-14T21:19:46.276096Z",
+                "ticker": "KXETH15M-26FEB141630-30",
+                "asset": "ETH",
+                "strategy": "overreaction_reversion",
+                "side": "YES",
+                "qty": 1.0,
+                "entry": 24.0,
+                "exit": 20.0,
+                "pnl_cents": -4.0,
+                "reason": "stop_loss"
+              }
+            ],
+            "realized_pnl_cents": 54.0,
+            "unrealized_pnl_cents": -2.0,
+            "total_pnl_cents": 52.0
           }
         ],
         "open_positions": 2,
-        "total_pnl_cents": 56.0
+        "total_pnl_cents": 52.0
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-14T21:19:31.655954Z",
+        "last_updated": "2026-02-14T21:19:45.138949Z",
         "focused_market_count_last_cycle": 1,
         "recent_cycles": [
-          {
-            "time": "2026-02-14T21:17:01.145717Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 1,
-            "open_positions": 0,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -145.0,
-            "unrealized_pnl_cents": 0,
-            "total_pnl_cents": -145.0
-          },
           {
             "time": "2026-02-14T21:17:14.800197Z",
             "strategy": "spot_edge",
@@ -701,6 +734,17 @@
             "realized_pnl_cents": -145.0,
             "unrealized_pnl_cents": 0,
             "total_pnl_cents": -145.0
+          },
+          {
+            "time": "2026-02-14T21:19:45.142869Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 1,
+            "open_positions": 0,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": -145.0,
+            "unrealized_pnl_cents": 0,
+            "total_pnl_cents": -145.0
           }
         ],
         "open_positions": 0,
@@ -712,11 +756,11 @@
     "open_positions": 2,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
-    "total_pnl_cents": -87.0,
-    "trades_total": 121,
+    "total_pnl_cents": -91.0,
+    "trades_total": 122,
     "wins": 37,
-    "losses": 78,
-    "win_rate": 30.6,
+    "losses": 79,
+    "win_rate": 30.3,
     "by_asset": {
       "BTC": {
         "trades": 38,
@@ -726,11 +770,11 @@
         "win_rate": 39.5
       },
       "ETH": {
-        "trades": 61,
+        "trades": 62,
         "wins": 18,
-        "losses": 41,
-        "pnl_cents": -47.0,
-        "win_rate": 29.5
+        "losses": 42,
+        "pnl_cents": -51.0,
+        "win_rate": 29.0
       },
       "SOL": {
         "trades": 22,
@@ -742,11 +786,11 @@
     },
     "by_strategy": {
       "overreaction_reversion": {
-        "trades": 69,
+        "trades": 70,
         "wins": 27,
-        "losses": 39,
-        "win_rate": 39.1,
-        "pnl_cents": 58.0
+        "losses": 40,
+        "win_rate": 38.6,
+        "pnl_cents": 54.0
       },
       "spot_edge": {
         "trades": 52,
@@ -776,7 +820,7 @@
       "unrealized_pnl_cents": -2.0
     },
     "overreaction_reversion:KXETH15M-26FEB141630-30": {
-      "opened_at": "2026-02-14T21:19:32.816634Z",
+      "opened_at": "2026-02-14T21:19:46.277165Z",
       "asset": "ETH",
       "title": "ETH price up in next 15 mins?",
       "strategy": "overreaction_reversion",
@@ -794,18 +838,6 @@
     }
   },
   "recent_trades": [
-    {
-      "time": "2026-02-14T17:11:22.117894Z",
-      "ticker": "KXETH15M-26FEB141215-15",
-      "asset": "ETH",
-      "strategy": "spot_edge",
-      "side": "YES",
-      "qty": 1.0,
-      "entry": 7.0,
-      "exit": 19.0,
-      "pnl_cents": 12.0,
-      "reason": "take_profit"
-    },
     {
       "time": "2026-02-14T17:11:22.123591Z",
       "ticker": "KXETH15M-26FEB141215-15",
@@ -1264,6 +1296,18 @@
     },
     {
       "time": "2026-02-14T21:19:32.815949Z",
+      "ticker": "KXETH15M-26FEB141630-30",
+      "asset": "ETH",
+      "strategy": "overreaction_reversion",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 24.0,
+      "exit": 20.0,
+      "pnl_cents": -4.0,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-14T21:19:46.276096Z",
       "ticker": "KXETH15M-26FEB141630-30",
       "asset": "ETH",
       "strategy": "overreaction_reversion",
