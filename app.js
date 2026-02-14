@@ -5,63 +5,62 @@ function row(k, v, cls = "") {
 }
 
 function fmtPnl(v) {
-  const n = Number(v || 0).toFixed(2);
-  return `${n}c`;
+  return `${Number(v || 0).toFixed(2)}c`;
 }
 
 function render(data) {
-  const sys = data.system || {};
-  const market = data.market || {};
-  const paper = data.paper || {};
-  const live = data.live_loop || {};
-  const cands = market.candidates || [];
-  const positions = live.state_positions || paper.positions || {};
-  const arts = data.artifacts || {};
+  const loop = data.loop || {};
+  const strat = data.strategy || {};
+  const perf = data.performance || {};
+  const positions = data.positions || {};
+  const trades = data.recent_trades || [];
+  const byAsset = perf.by_asset || {};
 
   q("system").innerHTML = [
-    row("MODE", sys.mode || "?"),
-    row("TRADE_ENABLED", String(sys.trade_enabled), sys.trade_enabled ? "bad" : "good"),
-    row("LOOP_ACTIVE", String(!!live.active), live.active ? "good" : "bad"),
-    row("LOOP_POLL", `${live.poll_seconds ?? "?"}s`),
-    row("ASSETS", (live.assets || []).join(",") || "?"),
-    row("UPDATED", data.generated_at || "?")
+    row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
+    row("MODE", strat.mode || "paper_only"),
+    row("LAST_UPDATE", loop.last_updated || "none"),
+    row("POLL", `${strat.poll_seconds ?? "?"}s`),
+    row("SERIES", (strat.series_tickers || []).join(",") || "none"),
+    row("FOCUSED_LAST", loop.focused_market_count_last_cycle ?? 0),
   ].join("");
 
+  const rules = strat.rules || {};
   q("market").innerHTML = [
-    row("FETCHED", market.fetched ?? 0),
-    row("ELIGIBLE", market.eligible ?? 0),
-    row("FALLBACK", String(market.fallback_used ?? false), market.fallback_used ? "warn" : "good"),
-    row("CANDIDATES", cands.length),
-    row("FOCUSED_NOW", live.focused_market_count ?? 0)
+    row("BUY YES <=", `${rules.buy_yes_below_cents ?? "?"}c`),
+    row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
+    row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
+    row("MAX HOLD", `${rules.max_hold_minutes ?? "?"}m`),
+    row("MIN VOLUME", rules.min_volume ?? "?"),
+    row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
+    row("MAX OPEN", rules.max_open_positions ?? "?"),
   ].join("");
+
+  const assetLines = Object.entries(byAsset).map(([a, s]) => {
+    return `${a}: trades=${s.trades} win_rate=${s.win_rate}% pnl=${Number(s.pnl_cents || 0).toFixed(2)}c`;
+  });
+  q("candidates").textContent = assetLines.length ? assetLines.join("\n") : "No closed trades yet.";
 
   q("paper").innerHTML = [
-    row("OPEN_POS", live.open_positions ?? paper.open_positions ?? 0),
-    row("REALIZED", fmtPnl(paper.realized_pnl_cents), Number(paper.realized_pnl_cents) >= 0 ? "good" : "bad"),
-    row("UNREALIZED", fmtPnl(paper.unrealized_pnl_cents), Number(paper.unrealized_pnl_cents) >= 0 ? "good" : "bad"),
-    row("TOTAL", fmtPnl(live.total_pnl_cents ?? paper.total_pnl_cents), Number(live.total_pnl_cents ?? paper.total_pnl_cents) >= 0 ? "good" : "bad"),
-    row("WIN RATE", `${paper.win_rate ?? 0}%`),
-    row("TRADES", paper.trades_total ?? 0)
+    row("OPEN_POS", perf.open_positions ?? 0),
+    row("REALIZED", fmtPnl(perf.realized_pnl_cents), Number(perf.realized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("UNREALIZED", fmtPnl(perf.unrealized_pnl_cents), Number(perf.unrealized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TOTAL", fmtPnl(perf.total_pnl_cents), Number(perf.total_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TRADES", perf.trades_total ?? 0),
+    row("WIN RATE", `${perf.win_rate ?? 0}%`),
   ].join("");
-
-  q("candidates").textContent = cands.length
-    ? cands.map((c, i) => `${i + 1}. ${c.market_ticker}\n   score=${c.score} vol=${c.volume} spread=${c.spread_bps} mid=${c.mid_price}`).join("\n\n")
-    : "No candidates in latest scan.";
 
   const posList = Object.entries(positions).map(([ticker, p]) =>
-    `${ticker}\n  ${(p.side || "YES")} x${p.qty} entry=${p.entry_price} mark=${p.mark_price} uPnL=${p.unrealized_pnl_cents}c`
+    `${ticker}\n  ${p.asset || "UNK"} ${(p.side || "YES")} x${p.qty} entry=${p.entry_price} mark=${p.mark_price} uPnL=${p.unrealized_pnl_cents}c`
   );
-  q("positions").textContent = posList.length ? posList.join("\n\n") : "No open paper positions.";
+  q("positions").textContent = posList.length ? posList.join("\n\n") : "No open positions.";
 
-  q("artifacts").innerHTML = [
-    row("RANKING", arts.ranking || "none"),
-    row("BACKTEST", arts.backtest || "none"),
-    row("PROPOSAL", arts.proposal || "none"),
-    row("SUMMARY", arts.daily_summary || "none"),
-    row("LAST_LOOP", live.last_updated || "none")
-  ].join("");
+  const tradeLines = trades.slice(-12).reverse().map((t) =>
+    `${t.time} | ${t.asset || "UNK"} | ${t.ticker} | pnl=${Number(t.pnl_cents || 0).toFixed(2)}c | ${t.reason || "n/a"}`
+  );
+  q("artifacts").textContent = tradeLines.length ? tradeLines.join("\n") : "No recent closed trades.";
 
-  q("statusText").textContent = live.active ? "ONLINE / LOOP ACTIVE" : "ONLINE / LOOP IDLE";
+  q("statusText").textContent = loop.active ? "ONLINE / 15M LOOP ACTIVE" : "ONLINE / LOOP INACTIVE";
 }
 
 async function load() {
