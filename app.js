@@ -42,6 +42,8 @@ function render(data) {
 
   const rules = targetStrategy ? ((strat.configs || {})[targetStrategy] || strat.rules || {}) : (strat.rules || {});
   q("market").innerHTML = [
+    row("ASSETS", (rules.trade_assets || []).join(',') || '?'),
+    row("ALLOW NO", String(rules.allow_no_trades ?? true)),
     row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
     row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
     row("MAX HOLD", `${rules.max_hold_minutes ?? "?"}m`),
