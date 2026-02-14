@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T23:52:52.014635Z",
+  "generated_at": "2026-02-14T23:53:06.140167Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -101,20 +101,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T23:52:51.785156Z",
+    "last_updated": "2026-02-14T23:53:04.864731Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-14T23:50:20.061303Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -433.0,
-        "unrealized_pnl_cents": 4.0,
-        "total_pnl_cents": -429.0
-      },
       {
         "time": "2026-02-14T23:50:32.849324Z",
         "strategy": "spot_edge",
@@ -494,6 +483,26 @@
         "realized_pnl_cents": -476.0,
         "unrealized_pnl_cents": -3.0,
         "total_pnl_cents": -479.0
+      },
+      {
+        "time": "2026-02-14T23:53:04.870615Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXETH15M-26FEB141900-00",
+            "asset": "ETH",
+            "side": "YES",
+            "entry": 56.0,
+            "score": 24.08,
+            "strategy": "spot_edge"
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": -571.0,
+        "unrealized_pnl_cents": 4.0,
+        "total_pnl_cents": -567.0
       }
     ],
     "by_strategy": {
@@ -828,33 +837,9 @@
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-14T23:52:50.479446Z",
+        "last_updated": "2026-02-14T23:53:04.864731Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-14T23:50:04.912007Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 3,
-            "open_positions": 1,
-            "opened": [],
-            "closed": [
-              {
-                "time": "2026-02-14T23:50:04.904131Z",
-                "ticker": "KXBTC15M-26FEB141900-00",
-                "asset": "BTC",
-                "strategy": "spot_edge",
-                "side": "NO",
-                "qty": 1.0,
-                "entry": 41.0,
-                "exit": 55.0,
-                "pnl_cents": 14.0,
-                "reason": "take_profit"
-              }
-            ],
-            "realized_pnl_cents": -571.0,
-            "unrealized_pnl_cents": 4.0,
-            "total_pnl_cents": -567.0
-          },
           {
             "time": "2026-02-14T23:50:18.670452Z",
             "strategy": "spot_edge",
@@ -975,15 +960,35 @@
             "realized_pnl_cents": -571.0,
             "unrealized_pnl_cents": 4.0,
             "total_pnl_cents": -567.0
+          },
+          {
+            "time": "2026-02-14T23:53:04.870615Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 3,
+            "open_positions": 2,
+            "opened": [
+              {
+                "ticker": "KXETH15M-26FEB141900-00",
+                "asset": "ETH",
+                "side": "YES",
+                "entry": 56.0,
+                "score": 24.08,
+                "strategy": "spot_edge"
+              }
+            ],
+            "closed": [],
+            "realized_pnl_cents": -571.0,
+            "unrealized_pnl_cents": 4.0,
+            "total_pnl_cents": -567.0
           }
         ],
-        "open_positions": 1,
+        "open_positions": 2,
         "total_pnl_cents": -567.0
       }
     }
   },
   "performance": {
-    "open_positions": 4,
+    "open_positions": 5,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
     "total_pnl_cents": -1047.0,
@@ -1107,6 +1112,24 @@
       },
       "score": 14.85,
       "unrealized_pnl_cents": 4.0
+    },
+    "spot_edge:KXETH15M-26FEB141900-00": {
+      "opened_at": "2026-02-14T23:53:04.864536Z",
+      "asset": "ETH",
+      "title": "ETH price up in next 15 mins?",
+      "strategy": "spot_edge",
+      "side": "YES",
+      "qty": 1,
+      "entry_price": 56.0,
+      "mark_price": 56.0,
+      "signal": {
+        "mom_bps": -4.215,
+        "vol_bps": 1.428,
+        "z": -1.054,
+        "p_up": 0.2792
+      },
+      "score": 24.08,
+      "unrealized_pnl_cents": 0.0
     }
   },
   "recent_trades": [
