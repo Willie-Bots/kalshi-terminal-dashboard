@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T16:30:06.320063Z",
+  "generated_at": "2026-02-14T16:35:06.666554Z",
   "strategy": {
     "name": "Crypto 15m momentum paper loop",
     "mode": "paper_only",
@@ -21,9 +21,9 @@
       "min_momentum_bps": 2.5,
       "min_edge_cents": 2.5,
       "spike_filter_bps": 37,
-      "take_profit_cents": 10,
+      "take_profit_cents": 8,
       "stop_loss_cents": 5,
-      "max_hold_minutes": 15,
+      "max_hold_minutes": 12,
       "min_volume": 10,
       "max_spread_cents": 6,
       "max_open_positions": 3,
@@ -32,156 +32,14 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T16:29:56.513461Z",
+    "last_updated": "2026-02-14T16:34:58.900653Z",
     "started_at": "2026-02-14T14:51:56.255225Z",
     "focused_market_count_last_cycle": 3,
     "opened_last_cycle": [],
     "closed_last_cycle": [],
     "recent_cycles": [
       {
-        "time": "2026-02-14T16:27:58.019198Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [
-          {
-            "ticker": "KXSOL15M-26FEB141130-30",
-            "asset": "SOL",
-            "side": "YES",
-            "entry": 7.0,
-            "edge_cents": 14.61,
-            "signal": {
-              "mom_bps": -5.726,
-              "vol_bps": 3.908,
-              "z": -1.432,
-              "p_up": 0.2161
-            }
-          }
-        ],
-        "closed": [
-          {
-            "time": "2026-02-14T16:27:58.012281Z",
-            "ticker": "KXSOL15M-26FEB141130-30",
-            "asset": "SOL",
-            "side": "YES",
-            "qty": 1.0,
-            "entry": 10.0,
-            "exit": 4.0,
-            "pnl_cents": -6.0,
-            "reason": "stop_loss"
-          }
-        ],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -5.0,
-        "total_pnl_cents": -221.0
-      },
-      {
-        "time": "2026-02-14T16:28:08.791137Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -8.0,
-        "total_pnl_cents": -224.0
-      },
-      {
-        "time": "2026-02-14T16:28:19.538983Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -8.0,
-        "total_pnl_cents": -224.0
-      },
-      {
-        "time": "2026-02-14T16:28:30.349180Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -8.0,
-        "total_pnl_cents": -224.0
-      },
-      {
-        "time": "2026-02-14T16:28:41.106807Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -8.0,
-        "total_pnl_cents": -224.0
-      },
-      {
-        "time": "2026-02-14T16:28:51.791226Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -216.0,
-        "unrealized_pnl_cents": -8.0,
-        "total_pnl_cents": -224.0
-      },
-      {
-        "time": "2026-02-14T16:29:02.612460Z",
-        "focused_market_count": 3,
-        "open_positions": 2,
-        "opened": [],
-        "closed": [
-          {
-            "time": "2026-02-14T16:29:02.605689Z",
-            "ticker": "KXSOL15M-26FEB141130-30",
-            "asset": "SOL",
-            "side": "YES",
-            "qty": 1.0,
-            "entry": 7.0,
-            "exit": 2.0,
-            "pnl_cents": -5.0,
-            "reason": "stop_loss"
-          }
-        ],
-        "realized_pnl_cents": -221.0,
-        "unrealized_pnl_cents": -5.0,
-        "total_pnl_cents": -226.0
-      },
-      {
-        "time": "2026-02-14T16:29:13.399483Z",
-        "focused_market_count": 3,
-        "open_positions": 2,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -221.0,
-        "unrealized_pnl_cents": -5.0,
-        "total_pnl_cents": -226.0
-      },
-      {
-        "time": "2026-02-14T16:29:24.122586Z",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [
-          {
-            "ticker": "KXSOL15M-26FEB141130-30",
-            "asset": "SOL",
-            "side": "YES",
-            "entry": 4.0,
-            "edge_cents": 13.56,
-            "signal": {
-              "mom_bps": -6.873,
-              "vol_bps": 3.935,
-              "z": -1.718,
-              "p_up": 0.1756
-            }
-          }
-        ],
-        "closed": [],
-        "realized_pnl_cents": -221.0,
-        "unrealized_pnl_cents": -5.0,
-        "total_pnl_cents": -226.0
-      },
-      {
-        "time": "2026-02-14T16:29:35.093598Z",
+        "time": "2026-02-14T16:32:59.760338Z",
         "focused_market_count": 3,
         "open_positions": 3,
         "opened": [],
@@ -191,7 +49,7 @@
         "total_pnl_cents": -227.0
       },
       {
-        "time": "2026-02-14T16:29:45.789331Z",
+        "time": "2026-02-14T16:33:10.550436Z",
         "focused_market_count": 3,
         "open_positions": 3,
         "opened": [],
@@ -201,7 +59,97 @@
         "total_pnl_cents": -227.0
       },
       {
-        "time": "2026-02-14T16:29:56.519118Z",
+        "time": "2026-02-14T16:33:21.431073Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:33:32.136006Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:33:42.795422Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:33:53.768893Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:04.887936Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:15.677868Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:26.471007Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:37.271429Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:48.131692Z",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -221.0,
+        "unrealized_pnl_cents": -6.0,
+        "total_pnl_cents": -227.0
+      },
+      {
+        "time": "2026-02-14T16:34:58.903455Z",
         "focused_market_count": 3,
         "open_positions": 3,
         "opened": [],
