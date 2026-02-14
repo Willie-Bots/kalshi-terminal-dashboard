@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T15:25:05.739606Z",
+  "generated_at": "2026-02-14T15:25:35.089517Z",
   "strategy": {
     "name": "Crypto 15m YES paper loop",
     "mode": "paper_only",
@@ -28,40 +28,12 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T15:24:44.258592Z",
+    "last_updated": "2026-02-14T15:25:31.277661Z",
     "started_at": "2026-02-14T14:51:56.255225Z",
     "focused_market_count_last_cycle": 1,
     "opened_last_cycle": [],
     "closed_last_cycle": [],
     "recent_cycles": [
-      {
-        "time": "2026-02-14T15:13:39.472248Z",
-        "focused_market_count": 1,
-        "open_positions": 2,
-        "opened": [
-          {
-            "ticker": "KXBTC15M-26FEB141015-15",
-            "asset": "BTC",
-            "entry": 1.5
-          }
-        ],
-        "closed": [
-          {
-            "time": "2026-02-14T15:13:39.471397Z",
-            "ticker": "KXBTC15M-26FEB141015-15",
-            "asset": "BTC",
-            "side": "YES",
-            "qty": 1.0,
-            "entry": 12.5,
-            "exit": 1.5,
-            "pnl_cents": -11.0,
-            "reason": "stop_loss"
-          }
-        ],
-        "realized_pnl_cents": -29.0,
-        "unrealized_pnl_cents": 0.0,
-        "total_pnl_cents": -29.0
-      },
       {
         "time": "2026-02-14T15:14:39.891109Z",
         "focused_market_count": 1,
@@ -189,6 +161,16 @@
         "realized_pnl_cents": 0.5,
         "unrealized_pnl_cents": -1.0,
         "total_pnl_cents": -0.5
+      },
+      {
+        "time": "2026-02-14T15:25:31.278315Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 0.5,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -0.5
       }
     ]
   },
@@ -283,7 +265,7 @@
     "note": "paper only until explicit approval"
   },
   "self_eval": {
-    "time": "2026-02-14T15:20:38.158178Z",
+    "time": "2026-02-14T15:25:34.948773Z",
     "decision": "no_change",
     "reason": "insufficient_data",
     "trades_analyzed": 4,
@@ -291,12 +273,16 @@
     "expectancy_cents": 0.125,
     "before": {
       "buy_yes_below_cents": 45,
+      "sell_yes_above_cents": 55,
+      "momentum_min_cents": 0.8,
       "take_profit_cents": 8,
       "stop_loss_cents": 6,
       "max_hold_minutes": 45
     },
     "after": {
       "buy_yes_below_cents": 45,
+      "sell_yes_above_cents": 55,
+      "momentum_min_cents": 0.8,
       "take_profit_cents": 8,
       "stop_loss_cents": 6,
       "max_hold_minutes": 45
