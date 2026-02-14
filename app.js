@@ -42,9 +42,11 @@ function render(data) {
     row("MAX HOLD", `${rules.max_hold_minutes ?? "?"}m`),
     row("MIN VOLUME", rules.min_volume ?? "?"),
     row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
+    row("SPIKE FILTER", `${rules.spike_filter_bps ?? "?"}bps`),
     row("MAX OPEN", rules.max_open_positions ?? "?"),
     row("SELL YES >=", `${rules.sell_yes_above_cents ?? "?"}c`),
-    row("MOMENTUM >=", `${rules.momentum_min_cents ?? "?"}c`),
+    row("MOMENTUM >=", `${rules.min_momentum_bps ?? "?"}bps`),
+    row("MIN EDGE", `${rules.min_edge_cents ?? "?"}c`),
     row("EVAL", evalr.decision || "n/a"),
     row("EVAL WR", `${evalr.win_rate_pct ?? "?"}%`),
     row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
@@ -78,8 +80,8 @@ function render(data) {
   const maxAbs = Math.max(1, ...totals.map(v => Math.abs(v)));
   q("profitChart").innerHTML = totals.length
     ? totals.map(v => {
-        const h = Math.max(6, Math.round((Math.abs(v) / maxAbs) * 56));
-        return `<div class="profit-bar ${v < 0 ? "neg" : ""}" style="height:${h}px" title="${v.toFixed(2)}c"></div>`;
+        const h = Math.max(4, Math.round((Math.abs(v) / maxAbs) * 36));
+        return `<div class="profit-col"><div class="profit-bar ${v < 0 ? "neg" : ""}" style="height:${h}px" title="${v.toFixed(2)}c"></div></div>`;
       }).join("")
     : "";
 

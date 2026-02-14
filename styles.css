@@ -59,21 +59,37 @@ pre {
 .good { color: var(--line); }
 
 .profit-chart {
+  position: relative;
   display: flex;
-  align-items: flex-end;
   gap: 4px;
-  height: 64px;
-  border-top: 1px dotted #145730;
-  padding-top: 8px;
+  height: 84px;
+  padding: 4px 0;
 }
-.profit-bar {
+.profit-chart::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dotted #145730;
+}
+.profit-col {
+  position: relative;
   flex: 1;
   min-width: 6px;
+}
+.profit-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
   background: #145730;
   border: 1px solid #1bff8a;
   opacity: 0.9;
 }
 .profit-bar.neg {
+  top: 50%;
+  bottom: auto;
   background: #5a1b1b;
   border-color: #ff5f56;
 }
