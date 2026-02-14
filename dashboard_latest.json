@@ -1,146 +1,287 @@
 {
-  "generated_at": "2026-02-14T14:59:35.774540Z",
-  "system": {
+  "generated_at": "2026-02-14T15:11:52.023851Z",
+  "strategy": {
+    "name": "Crypto 15m YES paper loop",
     "mode": "paper_only",
-    "trade_enabled": false,
-    "objective": "maximize_time_to_profit",
-    "guardrails": "enabled"
-  },
-  "artifacts": {
-    "ranking": "market_ranking_20260214T130007Z.json",
-    "backtest": "backtest_snapshot_20260214T130010Z.json",
-    "proposal": "proposal_20260214T130010Z.md",
-    "daily_summary": "daily_summary_latest.md"
-  },
-  "market": {
-    "fetched": 1600,
-    "eligible": 2,
-    "fallback_used": false,
-    "candidates": [
-      {
-        "market_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202601090E2B4C5-040DDD8BDFD",
-        "title": "yes Xavier,yes Georgia,no Iowa St. wins by over 6.5 Points,no Vanderbilt wins by over 7.5 Points,no Florida wins by over 14.5 Points",
-        "status": "active",
-        "volume": 1063.0,
-        "liquidity": 500.0,
-        "yes_bid": 0,
-        "yes_ask": 5,
-        "no_bid": 95,
-        "no_ask": 100,
-        "last_price": 4,
-        "mid_price": 2.5,
-        "spread_bps": 500.0,
-        "score": 0.457,
-        "hours_to_close": 343.0,
-        "close_time": "2026-02-28T20:00:00Z",
-        "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S202601090E2B4C5"
-      },
-      {
-        "market_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262A2C49BDC36-EE5A4FBA59E",
-        "title": "yes California wins by over 3.5 Points,no Virginia Tech wins by over 7.5 Points,no Notre Dame wins by over 8.5 Points,no Iowa St. wins by over 6.5 Points,yes North Carolina wins by over 10.5 Points",
-        "status": "active",
-        "volume": 601.0,
-        "liquidity": 500.0,
-        "yes_bid": 0,
-        "yes_ask": 5,
-        "no_bid": 95,
-        "no_ask": 100,
-        "last_price": 4,
-        "mid_price": 2.5,
-        "spread_bps": 500.0,
-        "score": 0.456,
-        "hours_to_close": 340.0,
-        "close_time": "2026-02-28T17:00:00Z",
-        "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262A2C49BDC36"
-      }
-    ]
-  },
-  "paper": {
-    "open_positions": 3,
-    "realized_pnl_cents": 0.0,
-    "unrealized_pnl_cents": 0.0,
-    "total_pnl_cents": 0.0,
-    "trades_total": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": 0,
-    "positions": {
-      "KXMVESPORTSMULTIGAMEEXTENDED-S202683E61F23B82-3DA9470D2A9": {
-        "opened_at": "2026-02-14T02:55:06.379324Z",
-        "side": "YES",
-        "qty": 1,
-        "entry_price": 1.5,
-        "mark_price": 1.5,
-        "unrealized_pnl_cents": 0.0,
-        "score": 0.4881
-      },
-      "KXMVESPORTSMULTIGAMEEXTENDED-S20268F21C784501-E687AAF56EA": {
-        "opened_at": "2026-02-14T02:55:06.379324Z",
-        "side": "YES",
-        "qty": 1,
-        "entry_price": 5.0,
-        "mark_price": 5.0,
-        "unrealized_pnl_cents": 0.0,
-        "score": 0.4051
-      },
-      "KXMVESPORTSMULTIGAMEEXTENDED-S20261E8E9EC9E87-60F32D1E244": {
-        "opened_at": "2026-02-14T02:59:59.887964Z",
-        "side": "YES",
-        "qty": 1,
-        "entry_price": 8.5,
-        "mark_price": 8.5,
-        "unrealized_pnl_cents": 0.0,
-        "score": 0.2745
-      }
-    }
-  },
-  "live_loop": {
-    "active": true,
-    "last_updated": "2026-02-14T14:59:33.470650Z",
-    "poll_seconds": 60,
     "assets": [
       "BTC",
       "ETH",
       "SOL"
     ],
-    "require_timeframe_match": true,
-    "timeframe_tags": [
-      "15m",
-      "15 min",
-      "15-minute",
-      "15 minute",
-      "15 minutes"
+    "series_tickers": [
+      "KXBTC15M",
+      "KXETH15M",
+      "KXSOL15M"
     ],
-    "focused_market_count": 1,
-    "open_positions": 1,
-    "opened_last_cycle": [],
-    "closed_last_cycle": [],
-    "state_positions": {
-      "KXMVESPORTSMULTIGAMEEXTENDED-S20260EFB3348502-357C8B00C69": {
-        "opened_at": "2026-02-14T14:58:57.511667Z",
-        "asset": "UNK",
-        "title": "yes American,yes Vermont,yes Boston University,yes Bethune-Cookman,yes Missouri St.,yes Norfolk St.,yes William & Mary,yes Virginia Tech,yes High Point,yes Kent St.,yes Iowa St.,yes Liberty,yes Louisville,yes North Carolina,yes St. John's,yes Florida Gulf Coast,yes UT Arlington,yes Vanderbilt,yes Florida,yes Texas St.,yes Howard,yes Jacksonville,yes Arkansas St.,yes Central Arkansas,yes Eastern Michigan",
-        "qty": 1,
-        "entry_price": 0.5,
-        "mark_price": 0.5,
-        "unrealized_pnl_cents": 0.0
-      }
-    },
-    "total_pnl_cents": 0.0
-  },
-  "backtest": {
-    "snapshot": {
-      "generated_at": "2026-02-14T13:00:10.287347Z",
-      "mode": "scaffold",
-      "trade_enabled": false,
-      "strategies_tested": [
-        "mean_reversion_stub",
-        "momentum_stub"
-      ],
-      "win_rate": null,
-      "expectancy": null,
-      "max_drawdown": null,
-      "notes": "Backtest engine not yet wired to real Kalshi market data."
+    "poll_seconds": 60,
+    "require_timeframe_match": true,
+    "rules": {
+      "buy_yes_below_cents": 45,
+      "take_profit_cents": 8,
+      "stop_loss_cents": 6,
+      "max_hold_minutes": 45,
+      "min_volume": 100,
+      "max_spread_cents": 6,
+      "max_open_positions": 3,
+      "contracts_per_trade": 1
     }
+  },
+  "loop": {
+    "active": true,
+    "last_updated": "2026-02-14T15:11:38.533186Z",
+    "started_at": "2026-02-14T14:51:56.255225Z",
+    "focused_market_count_last_cycle": 1,
+    "opened_last_cycle": [
+      {
+        "ticker": "KXBTC15M-26FEB141015-15",
+        "asset": "BTC",
+        "entry": 12.5
+      }
+    ],
+    "closed_last_cycle": [
+      {
+        "time": "2026-02-14T15:11:38.532845Z",
+        "ticker": "KXBTC15M-26FEB141015-15",
+        "asset": "BTC",
+        "side": "YES",
+        "qty": 1.0,
+        "entry": 44.0,
+        "exit": 12.5,
+        "pnl_cents": -31.5,
+        "reason": "stop_loss"
+      }
+    ],
+    "recent_cycles": [
+      {
+        "time": "2026-02-14T15:00:33.912233Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXBTC15M-26FEB141015-15",
+            "asset": "BTC",
+            "entry": 32.5
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": 0.0,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 0.0
+      },
+      {
+        "time": "2026-02-14T15:01:34.305974Z",
+        "focused_market_count": 1,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [
+          {
+            "time": "2026-02-14T15:01:34.304650Z",
+            "ticker": "KXBTC15M-26FEB141015-15",
+            "asset": "BTC",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 32.5,
+            "exit": 46.0,
+            "pnl_cents": 13.5,
+            "reason": "take_profit"
+          }
+        ],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 13.5
+      },
+      {
+        "time": "2026-02-14T15:02:34.756719Z",
+        "focused_market_count": 1,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 13.5
+      },
+      {
+        "time": "2026-02-14T15:03:35.163246Z",
+        "focused_market_count": 1,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 13.5
+      },
+      {
+        "time": "2026-02-14T15:04:35.626608Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXBTC15M-26FEB141015-15",
+            "asset": "BTC",
+            "entry": 44.0
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 13.5
+      },
+      {
+        "time": "2026-02-14T15:05:36.042053Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 4.0,
+        "total_pnl_cents": 17.5
+      },
+      {
+        "time": "2026-02-14T15:06:36.472927Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": -0.5,
+        "total_pnl_cents": 13.0
+      },
+      {
+        "time": "2026-02-14T15:07:36.893792Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 2.0,
+        "total_pnl_cents": 15.5
+      },
+      {
+        "time": "2026-02-14T15:08:37.324985Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 7.5,
+        "total_pnl_cents": 21.0
+      },
+      {
+        "time": "2026-02-14T15:09:37.751139Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": -5.0,
+        "total_pnl_cents": 8.5
+      },
+      {
+        "time": "2026-02-14T15:10:38.154639Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 13.5,
+        "unrealized_pnl_cents": 5.5,
+        "total_pnl_cents": 19.0
+      },
+      {
+        "time": "2026-02-14T15:11:38.533742Z",
+        "focused_market_count": 1,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXBTC15M-26FEB141015-15",
+            "asset": "BTC",
+            "entry": 12.5
+          }
+        ],
+        "closed": [
+          {
+            "time": "2026-02-14T15:11:38.532845Z",
+            "ticker": "KXBTC15M-26FEB141015-15",
+            "asset": "BTC",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 44.0,
+            "exit": 12.5,
+            "pnl_cents": -31.5,
+            "reason": "stop_loss"
+          }
+        ],
+        "realized_pnl_cents": -18.0,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": -18.0
+      }
+    ]
+  },
+  "performance": {
+    "open_positions": 2,
+    "realized_pnl_cents": -18.0,
+    "unrealized_pnl_cents": 0.0,
+    "total_pnl_cents": -18.0,
+    "trades_total": 2,
+    "wins": 1,
+    "losses": 1,
+    "win_rate": 50.0,
+    "by_asset": {
+      "BTC": {
+        "trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "pnl_cents": -18.0,
+        "win_rate": 50.0
+      }
+    }
+  },
+  "positions": {
+    "KXMVESPORTSMULTIGAMEEXTENDED-S20260EFB3348502-357C8B00C69": {
+      "opened_at": "2026-02-14T14:58:57.511667Z",
+      "asset": "UNK",
+      "title": "yes American,yes Vermont,yes Boston University,yes Bethune-Cookman,yes Missouri St.,yes Norfolk St.,yes William & Mary,yes Virginia Tech,yes High Point,yes Kent St.,yes Iowa St.,yes Liberty,yes Louisville,yes North Carolina,yes St. John's,yes Florida Gulf Coast,yes UT Arlington,yes Vanderbilt,yes Florida,yes Texas St.,yes Howard,yes Jacksonville,yes Arkansas St.,yes Central Arkansas,yes Eastern Michigan",
+      "qty": 1,
+      "entry_price": 0.5,
+      "mark_price": 0.5,
+      "unrealized_pnl_cents": 0.0
+    },
+    "KXBTC15M-26FEB141015-15": {
+      "opened_at": "2026-02-14T15:11:38.532981Z",
+      "asset": "BTC",
+      "title": "BTC price up in next 15 mins?",
+      "qty": 1,
+      "entry_price": 12.5,
+      "mark_price": 12.5,
+      "unrealized_pnl_cents": 0.0
+    }
+  },
+  "recent_trades": [
+    {
+      "time": "2026-02-14T15:01:34.304650Z",
+      "ticker": "KXBTC15M-26FEB141015-15",
+      "asset": "BTC",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 32.5,
+      "exit": 46.0,
+      "pnl_cents": 13.5,
+      "reason": "take_profit"
+    },
+    {
+      "time": "2026-02-14T15:11:38.532845Z",
+      "ticker": "KXBTC15M-26FEB141015-15",
+      "asset": "BTC",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 44.0,
+      "exit": 12.5,
+      "pnl_cents": -31.5,
+      "reason": "stop_loss"
+    }
+  ],
+  "guardrails": {
+    "trade_enabled": false,
+    "live_trading": "disabled",
+    "note": "paper only until explicit approval"
   }
 }
