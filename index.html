@@ -3,56 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KALSHI 15M LOOP // TERMINAL</title>
+  <title>KALSHI 15M STRATEGY HOME</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="crt">
     <header class="topbar">
-      <div>KALSHI_15M_LOOP v2</div>
+      <div>KALSHI_STRATEGY_HOME</div>
       <div id="clock">--:--:--</div>
     </header>
 
     <section class="panel wide">
-      <h2>OVERALL PROFIT (RECENT CYCLES)</h2>
-      <div id="profitChart" class="profit-chart"></div>
+      <h2>ACTIVE STRATEGY</h2>
+      <div id="active"></div>
     </section>
 
     <section class="grid">
-      <article class="panel">
-        <h2>LOOP STATUS</h2>
-        <div id="system"></div>
-      </article>
-
-      <article class="panel">
-        <h2>STRATEGY RULES</h2>
-        <div id="market"></div>
-      </article>
-
       <article class="panel wide">
-        <h2>ASSET PERFORMANCE (BTC/ETH/SOL 15M)</h2>
-        <pre id="candidates"></pre>
+        <h2>STRATEGY LIBRARY</h2>
+        <pre id="library"></pre>
       </article>
-
-      <article class="panel">
-        <h2>PAPER PNL</h2>
-        <div id="paper"></div>
-      </article>
-
       <article class="panel wide">
-        <h2>OPEN POSITIONS</h2>
-        <pre id="positions"></pre>
-      </article>
-
-      <article class="panel wide">
-        <h2>RECENT TRADES</h2>
-        <pre id="artifacts"></pre>
+        <h2>QUICK LINKS</h2>
+        <pre>Active detail: <a href="./strategy.html">/strategy.html</a>
+Spot-edge detail: <a href="./strategy.html?strategy=spot_edge">/strategy.html?strategy=spot_edge</a>
+Reversion detail: <a href="./strategy.html?strategy=overreaction_reversion">/strategy.html?strategy=overreaction_reversion</a></pre>
       </article>
     </section>
 
     <footer class="status">STATUS: <span id="statusText">LOADING...</span></footer>
   </main>
-
-  <script src="app.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>

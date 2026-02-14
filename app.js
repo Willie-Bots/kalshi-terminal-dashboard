@@ -16,18 +16,24 @@ function fmtTs(s) {
 }
 
 function render(data) {
+  const targetStrategy = new URLSearchParams(location.search).get('strategy');
   const loop = data.loop || {};
   const strat = data.strategy || {};
   const perf = data.performance || {};
-  const positions = data.positions || {};
-  const trades = data.recent_trades || [];
+  const allPositions = data.positions || {};
+  const allTrades = data.recent_trades || [];
+  const positions = targetStrategy ? Object.fromEntries(Object.entries(allPositions).filter(([,p]) => (p.strategy || data.strategy?.name) === targetStrategy)) : allPositions;
+  const trades = targetStrategy ? allTrades.filter(t => (t.strategy || 'legacy') === targetStrategy) : allTrades;
   const byAsset = perf.by_asset || {};
+  const byStrategy = perf.by_strategy || {};
+  const strategyPerf = targetStrategy ? (byStrategy[targetStrategy] || { trades: 0, wins: 0, losses: 0, pnl_cents: 0, win_rate: 0 }) : null;
   const evalr = data.self_eval || {};
   const recentCycles = loop.recent_cycles || [];
 
   q("system").innerHTML = [
     row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
     row("MODE", strat.mode || "paper_only"),
+    row("STRATEGY", targetStrategy || strat.name || 'active'),
     row("LAST_UPDATE", fmtTs(loop.last_updated)),
     row("POLL", `${strat.poll_seconds ?? "?"}s`),
     row("SERIES", (strat.series_tickers || []).join(",") || "none"),
@@ -50,18 +56,18 @@ function render(data) {
     row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
   ].join("");
 
-  const assetLines = Object.entries(byAsset).map(([a, s]) => {
-    return `${a}: trades=${s.trades} win_rate=${s.win_rate}% pnl=${Number(s.pnl_cents || 0).toFixed(2)}c`;
-  });
+  const assetLines = targetStrategy
+    ? [`${targetStrategy}: trades=${strategyPerf.trades} win_rate=${strategyPerf.win_rate}% pnl=${Number(strategyPerf.pnl_cents || 0).toFixed(2)}c`]
+    : Object.entries(byAsset).map(([a, s]) => `${a}: trades=${s.trades} win_rate=${s.win_rate}% pnl=${Number(s.pnl_cents || 0).toFixed(2)}c`);
   q("candidates").textContent = assetLines.length ? assetLines.join("\n") : "No closed trades yet.";
 
   q("paper").innerHTML = [
-    row("OPEN_POS", perf.open_positions ?? 0),
-    row("REALIZED", fmtPnl(perf.realized_pnl_cents), Number(perf.realized_pnl_cents) >= 0 ? "good" : "bad"),
-    row("UNREALIZED", fmtPnl(perf.unrealized_pnl_cents), Number(perf.unrealized_pnl_cents) >= 0 ? "good" : "bad"),
-    row("TOTAL", fmtPnl(perf.total_pnl_cents), Number(perf.total_pnl_cents) >= 0 ? "good" : "bad"),
-    row("TRADES", perf.trades_total ?? 0),
-    row("WIN RATE", `${perf.win_rate ?? 0}%`),
+    row("OPEN_POS", Object.keys(positions).length),
+    row("REALIZED", targetStrategy ? 'n/a' : fmtPnl(perf.realized_pnl_cents), Number(perf.realized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("UNREALIZED", targetStrategy ? 'n/a' : fmtPnl(perf.unrealized_pnl_cents), Number(perf.unrealized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TOTAL", targetStrategy ? fmtPnl(strategyPerf.pnl_cents) : fmtPnl(perf.total_pnl_cents), Number(targetStrategy ? strategyPerf.pnl_cents : perf.total_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TRADES", targetStrategy ? strategyPerf.trades : (perf.trades_total ?? 0)),
+    row("WIN RATE", `${targetStrategy ? strategyPerf.win_rate : (perf.win_rate ?? 0)}%`),
   ].join("");
 
   const posList = Object.entries(positions).map(([ticker, p]) =>
