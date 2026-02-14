@@ -36,7 +36,7 @@ function render(data) {
 
   const rules = strat.rules || {};
   q("market").innerHTML = [
-    row("BUY YES <=", `${rules.buy_yes_below_cents ?? "?"}c`),
+    row("BUY YES <=", rules.buy_yes_below_cents == null ? "n/a" : `${rules.buy_yes_below_cents}c`),
     row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
     row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
     row("MAX HOLD", `${rules.max_hold_minutes ?? "?"}m`),
@@ -44,7 +44,7 @@ function render(data) {
     row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
     row("SPIKE FILTER", `${rules.spike_filter_bps ?? "?"}bps`),
     row("MAX OPEN", rules.max_open_positions ?? "?"),
-    row("SELL YES >=", `${rules.sell_yes_above_cents ?? "?"}c`),
+    row("SELL YES >=", rules.sell_yes_above_cents == null ? "n/a" : `${rules.sell_yes_above_cents}c`),
     row("MOMENTUM >=", `${rules.min_momentum_bps ?? "?"}bps`),
     row("MIN EDGE", `${rules.min_edge_cents ?? "?"}c`),
     row("EVAL", evalr.decision || "n/a"),
