@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KALSHI BOT // TERMINAL</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="crt">
+    <header class="topbar">
+      <div>KALSHI_BOT_OS v0.1</div>
+      <div id="clock">--:--:--</div>
+    </header>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>SYSTEM</h2>
+        <div id="system"></div>
+      </article>
+
+      <article class="panel">
+        <h2>MARKET SCAN</h2>
+        <div id="market"></div>
+      </article>
+
+      <article class="panel wide">
+        <h2>TOP CANDIDATES</h2>
+        <pre id="candidates"></pre>
+      </article>
+
+      <article class="panel">
+        <h2>PAPER PNL</h2>
+        <div id="paper"></div>
+      </article>
+
+      <article class="panel wide">
+        <h2>OPEN POSITIONS</h2>
+        <pre id="positions"></pre>
+      </article>
+
+      <article class="panel wide">
+        <h2>FILES</h2>
+        <div id="artifacts"></div>
+      </article>
+    </section>
+
+    <footer class="status">STATUS: <span id="statusText">LOADING...</span></footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

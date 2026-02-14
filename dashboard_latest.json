@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-02-14T03:00:00.033501Z",
+  "system": {
+    "mode": "paper_only",
+    "trade_enabled": false,
+    "objective": "maximize_time_to_profit",
+    "guardrails": "enabled"
+  },
+  "artifacts": {
+    "ranking": "market_ranking_20260214T025957Z.json",
+    "backtest": "backtest_snapshot_20260214T023451Z.json",
+    "proposal": "proposal_20260214T023451Z.md",
+    "daily_summary": "daily_summary_latest.md"
+  },
+  "market": {
+    "fetched": 1600,
+    "eligible": 1,
+    "fallback_used": false,
+    "candidates": [
+      {
+        "market_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261E8E9EC9E87-60F32D1E244",
+        "title": "yes Purdue,yes St. John's,yes Wake Forest,yes Duke wins by over 13.5 Points,no Iowa St. wins by over 6.5 Points,no Over 147.5 points scored",
+        "status": "active",
+        "volume": 544.0,
+        "liquidity": 1983.0,
+        "yes_bid": 0,
+        "yes_ask": 17,
+        "no_bid": 82,
+        "no_ask": 100,
+        "last_price": 4,
+        "mid_price": 8.5,
+        "spread_bps": 1700.0,
+        "score": 0.2745,
+        "hours_to_close": 355.0,
+        "close_time": "2026-02-28T22:00:00Z",
+        "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261E8E9EC9E87"
+      }
+    ]
+  },
+  "paper": {
+    "open_positions": 3,
+    "realized_pnl_cents": 0.0,
+    "unrealized_pnl_cents": 0.0,
+    "total_pnl_cents": 0.0,
+    "trades_total": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0,
+    "positions": {
+      "KXMVESPORTSMULTIGAMEEXTENDED-S202683E61F23B82-3DA9470D2A9": {
+        "opened_at": "2026-02-14T02:55:06.379324Z",
+        "side": "YES",
+        "qty": 1,
+        "entry_price": 1.5,
+        "mark_price": 1.5,
+        "unrealized_pnl_cents": 0.0,
+        "score": 0.4881
+      },
+      "KXMVESPORTSMULTIGAMEEXTENDED-S20268F21C784501-E687AAF56EA": {
+        "opened_at": "2026-02-14T02:55:06.379324Z",
+        "side": "YES",
+        "qty": 1,
+        "entry_price": 5.0,
+        "mark_price": 5.0,
+        "unrealized_pnl_cents": 0.0,
+        "score": 0.4051
+      },
+      "KXMVESPORTSMULTIGAMEEXTENDED-S20261E8E9EC9E87-60F32D1E244": {
+        "opened_at": "2026-02-14T02:59:59.887964Z",
+        "side": "YES",
+        "qty": 1,
+        "entry_price": 8.5,
+        "mark_price": 8.5,
+        "unrealized_pnl_cents": 0.0,
+        "score": 0.2745
+      }
+    }
+  },
+  "backtest": {
+    "snapshot": {
+      "generated_at": "2026-02-14T02:34:51.113896Z",
+      "mode": "scaffold",
+      "trade_enabled": false,
+      "strategies_tested": [
+        "mean_reversion_stub",
+        "momentum_stub"
+      ],
+      "win_rate": null,
+      "expectancy": null,
+      "max_drawdown": null,
+      "notes": "Backtest engine not yet wired to real Kalshi market data."
+    }
+  }
+}
