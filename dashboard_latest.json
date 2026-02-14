@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T15:40:04.284673Z",
+  "generated_at": "2026-02-14T15:44:00.809355Z",
   "strategy": {
     "name": "Crypto 15m momentum paper loop",
     "mode": "paper_only",
@@ -16,12 +16,12 @@
     "poll_seconds": 60,
     "require_timeframe_match": true,
     "rules": {
-      "buy_yes_below_cents": 45,
-      "sell_yes_above_cents": 55,
-      "momentum_min_cents": 0.8,
-      "take_profit_cents": 8,
+      "buy_yes_below_cents": null,
+      "sell_yes_above_cents": null,
+      "momentum_min_cents": null,
+      "take_profit_cents": 10,
       "stop_loss_cents": 6,
-      "max_hold_minutes": 45,
+      "max_hold_minutes": 20,
       "min_volume": 10,
       "max_spread_cents": 6,
       "max_open_positions": 3,
@@ -30,80 +30,12 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T15:39:05.395323Z",
+    "last_updated": "2026-02-14T15:43:57.987707Z",
     "started_at": "2026-02-14T14:51:56.255225Z",
     "focused_market_count_last_cycle": 3,
     "opened_last_cycle": [],
     "closed_last_cycle": [],
     "recent_cycles": [
-      {
-        "time": "2026-02-14T15:29:01.292099Z",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
-      {
-        "time": "2026-02-14T15:30:01.858282Z",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
-      {
-        "time": "2026-02-14T15:31:02.533871Z",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
-      {
-        "time": "2026-02-14T15:32:03.165998Z",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
-      {
-        "time": "2026-02-14T15:33:03.704384Z",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
-      {
-        "time": "2026-02-14T15:34:02.635654Z",
-        "focused_market_count": 3,
-        "open_positions": 2,
-        "opened": [
-          {
-            "ticker": "KXSOL15M-26FEB141045-45",
-            "asset": "SOL",
-            "side": "YES",
-            "entry": 44.5,
-            "momentum": 44.5
-          }
-        ],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
       {
         "time": "2026-02-14T15:34:09.298057Z",
         "focused_market_count": 3,
@@ -252,14 +184,82 @@
         "realized_pnl_cents": -71.5,
         "unrealized_pnl_cents": -1.0,
         "total_pnl_cents": -72.5
+      },
+      {
+        "time": "2026-02-14T15:40:05.979733Z",
+        "focused_market_count": 3,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -72.5
+      },
+      {
+        "time": "2026-02-14T15:41:06.504268Z",
+        "focused_market_count": 3,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -72.5
+      },
+      {
+        "time": "2026-02-14T15:42:07.074293Z",
+        "focused_market_count": 3,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -72.5
+      },
+      {
+        "time": "2026-02-14T15:43:07.652746Z",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXBTC15M-26FEB141045-45",
+            "asset": "BTC",
+            "side": "YES",
+            "entry": 40.5,
+            "momentum": 3.0
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -72.5
+      },
+      {
+        "time": "2026-02-14T15:43:52.305934Z",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": 6.5,
+        "total_pnl_cents": -65.0
+      },
+      {
+        "time": "2026-02-14T15:43:57.988432Z",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -71.5,
+        "unrealized_pnl_cents": 6.5,
+        "total_pnl_cents": -65.0
       }
     ]
   },
   "performance": {
-    "open_positions": 1,
+    "open_positions": 2,
     "realized_pnl_cents": -71.5,
-    "unrealized_pnl_cents": -1.0,
-    "total_pnl_cents": -72.5,
+    "unrealized_pnl_cents": 6.5,
+    "total_pnl_cents": -65.0,
     "trades_total": 9,
     "wins": 3,
     "losses": 6,
@@ -297,6 +297,18 @@
       "entry_price": 1.5,
       "mark_price": 0.5,
       "unrealized_pnl_cents": -1.0
+    },
+    "KXBTC15M-26FEB141045-45": {
+      "opened_at": "2026-02-14T15:43:07.651870Z",
+      "asset": "BTC",
+      "title": "BTC price up in next 15 mins?",
+      "side": "YES",
+      "qty": 1,
+      "entry_price": 40.5,
+      "mark_price": 48.0,
+      "yes_mid": 40.5,
+      "momentum_cents": 3.0,
+      "unrealized_pnl_cents": 7.5
     }
   },
   "recent_trades": [
