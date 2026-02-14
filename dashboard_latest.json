@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T15:34:09.510078Z",
+  "generated_at": "2026-02-14T15:35:05.218667Z",
   "strategy": {
     "name": "Crypto 15m momentum paper loop",
     "mode": "paper_only",
@@ -30,30 +30,43 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T15:34:09.297419Z",
+    "last_updated": "2026-02-14T15:35:03.113145Z",
     "started_at": "2026-02-14T14:51:56.255225Z",
     "focused_market_count_last_cycle": 3,
     "opened_last_cycle": [
       {
+        "ticker": "KXSOL15M-26FEB141045-45",
+        "asset": "SOL",
+        "side": "YES",
+        "entry": 54.0,
+        "momentum": 1.5
+      }
+    ],
+    "closed_last_cycle": [
+      {
+        "time": "2026-02-14T15:35:03.112687Z",
+        "ticker": "KXSOL15M-26FEB141045-45",
+        "asset": "SOL",
+        "side": "YES",
+        "qty": 1.0,
+        "entry": 44.5,
+        "exit": 54.0,
+        "pnl_cents": 9.5,
+        "reason": "take_profit"
+      },
+      {
+        "time": "2026-02-14T15:35:03.112762Z",
         "ticker": "KXBTC15M-26FEB141045-45",
         "asset": "BTC",
         "side": "NO",
+        "qty": 1.0,
         "entry": 43.5,
-        "momentum": -4.5
+        "exit": 25.5,
+        "pnl_cents": -18.0,
+        "reason": "stop_loss"
       }
     ],
-    "closed_last_cycle": [],
     "recent_cycles": [
-      {
-        "time": "2026-02-14T15:26:31.849655Z",
-        "focused_market_count": 1,
-        "open_positions": 2,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.5,
-        "unrealized_pnl_cents": -1.0,
-        "total_pnl_cents": -0.5
-      },
       {
         "time": "2026-02-14T15:27:32.250954Z",
         "focused_market_count": 1,
@@ -179,25 +192,66 @@
         "realized_pnl_cents": 0.5,
         "unrealized_pnl_cents": -1.0,
         "total_pnl_cents": -0.5
+      },
+      {
+        "time": "2026-02-14T15:35:03.113761Z",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXSOL15M-26FEB141045-45",
+            "asset": "SOL",
+            "side": "YES",
+            "entry": 54.0,
+            "momentum": 1.5
+          }
+        ],
+        "closed": [
+          {
+            "time": "2026-02-14T15:35:03.112687Z",
+            "ticker": "KXSOL15M-26FEB141045-45",
+            "asset": "SOL",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 44.5,
+            "exit": 54.0,
+            "pnl_cents": 9.5,
+            "reason": "take_profit"
+          },
+          {
+            "time": "2026-02-14T15:35:03.112762Z",
+            "ticker": "KXBTC15M-26FEB141045-45",
+            "asset": "BTC",
+            "side": "NO",
+            "qty": 1.0,
+            "entry": 43.5,
+            "exit": 25.5,
+            "pnl_cents": -18.0,
+            "reason": "stop_loss"
+          }
+        ],
+        "realized_pnl_cents": -8.0,
+        "unrealized_pnl_cents": -1.0,
+        "total_pnl_cents": -9.0
       }
     ]
   },
   "performance": {
-    "open_positions": 3,
-    "realized_pnl_cents": 0.5,
+    "open_positions": 2,
+    "realized_pnl_cents": -8.0,
     "unrealized_pnl_cents": -1.0,
-    "total_pnl_cents": -0.5,
-    "trades_total": 4,
-    "wins": 2,
-    "losses": 2,
+    "total_pnl_cents": -9.0,
+    "trades_total": 6,
+    "wins": 3,
+    "losses": 3,
     "win_rate": 50.0,
     "by_asset": {
       "BTC": {
-        "trades": 4,
+        "trades": 5,
         "wins": 2,
-        "losses": 2,
-        "pnl_cents": 0.5,
-        "win_rate": 50.0
+        "losses": 3,
+        "pnl_cents": -17.5,
+        "win_rate": 40.0
       },
       "ETH": {
         "trades": 0,
@@ -207,11 +261,11 @@
         "win_rate": 0
       },
       "SOL": {
-        "trades": 0,
-        "wins": 0,
+        "trades": 1,
+        "wins": 1,
         "losses": 0,
-        "pnl_cents": 0.0,
-        "win_rate": 0
+        "pnl_cents": 9.5,
+        "win_rate": 100.0
       }
     }
   },
@@ -226,27 +280,15 @@
       "unrealized_pnl_cents": -1.0
     },
     "KXSOL15M-26FEB141045-45": {
-      "opened_at": "2026-02-14T15:34:02.634792Z",
+      "opened_at": "2026-02-14T15:35:03.112934Z",
       "asset": "SOL",
       "title": "SOL price up in next 15 mins?",
       "side": "YES",
       "qty": 1,
-      "entry_price": 44.5,
-      "mark_price": 44.5,
-      "yes_mid": 44.5,
-      "momentum_cents": 44.5,
-      "unrealized_pnl_cents": 0.0
-    },
-    "KXBTC15M-26FEB141045-45": {
-      "opened_at": "2026-02-14T15:34:09.297224Z",
-      "asset": "BTC",
-      "title": "BTC price up in next 15 mins?",
-      "side": "NO",
-      "qty": 1,
-      "entry_price": 43.5,
-      "mark_price": 43.5,
-      "yes_mid": 56.5,
-      "momentum_cents": -4.5,
+      "entry_price": 54.0,
+      "mark_price": 54.0,
+      "yes_mid": 54.0,
+      "momentum_cents": 1.5,
       "unrealized_pnl_cents": 0.0
     }
   },
@@ -294,6 +336,28 @@
       "exit": 60.5,
       "pnl_cents": 29.5,
       "reason": "take_profit"
+    },
+    {
+      "time": "2026-02-14T15:35:03.112687Z",
+      "ticker": "KXSOL15M-26FEB141045-45",
+      "asset": "SOL",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 44.5,
+      "exit": 54.0,
+      "pnl_cents": 9.5,
+      "reason": "take_profit"
+    },
+    {
+      "time": "2026-02-14T15:35:03.112762Z",
+      "ticker": "KXBTC15M-26FEB141045-45",
+      "asset": "BTC",
+      "side": "NO",
+      "qty": 1.0,
+      "entry": 43.5,
+      "exit": 25.5,
+      "pnl_cents": -18.0,
+      "reason": "stop_loss"
     }
   ],
   "guardrails": {
