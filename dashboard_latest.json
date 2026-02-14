@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T20:11:32.996139Z",
+  "generated_at": "2026-02-14T20:11:46.675606Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -21,41 +21,41 @@
     "parallel": true,
     "rules": {
       "take_profit_cents": 8,
-      "stop_loss_cents": 5,
-      "max_hold_minutes": 12,
+      "stop_loss_cents": 4,
+      "max_hold_minutes": 10,
       "min_volume": 10,
       "max_spread_cents": 6,
       "spike_filter_bps": 37,
       "max_open_positions": 3,
       "min_momentum_bps": 2.5,
       "min_edge_cents": 2.5,
-      "reversion_z_threshold": 1.8,
-      "reversion_min_edge_cents": 1.5
+      "reversion_z_threshold": 2.2,
+      "reversion_min_edge_cents": 1.8
     },
     "configs": {
       "overreaction_reversion": {
         "take_profit_cents": 8,
-        "stop_loss_cents": 5,
-        "max_hold_minutes": 12,
+        "stop_loss_cents": 4,
+        "max_hold_minutes": 10,
         "min_volume": 10,
         "max_spread_cents": 6,
         "spike_filter_bps": 37,
         "max_open_positions": 3,
         "min_momentum_bps": 2.5,
         "min_edge_cents": 2.5,
-        "reversion_z_threshold": 1.8,
-        "reversion_min_edge_cents": 1.5
+        "reversion_z_threshold": 2.2,
+        "reversion_min_edge_cents": 1.8
       },
       "spot_edge": {
-        "take_profit_cents": 10,
-        "stop_loss_cents": 5,
-        "max_hold_minutes": 15,
+        "take_profit_cents": 8,
+        "stop_loss_cents": 4,
+        "max_hold_minutes": 10,
         "min_volume": 10,
         "max_spread_cents": 6,
-        "spike_filter_bps": 37,
+        "spike_filter_bps": 32,
         "max_open_positions": 3,
-        "min_momentum_bps": 2.5,
-        "min_edge_cents": 2.5,
+        "min_momentum_bps": 3.5,
+        "min_edge_cents": 3.5,
         "reversion_z_threshold": 1.8,
         "reversion_min_edge_cents": 1.5
       }
@@ -63,31 +63,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-14T20:11:32.772663Z",
+    "last_updated": "2026-02-14T20:11:46.433664Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-14T20:09:26.746895Z",
-        "strategy": "spot_edge",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -156.0,
-        "unrealized_pnl_cents": -11.0,
-        "total_pnl_cents": -167.0
-      },
-      {
-        "time": "2026-02-14T20:09:27.950024Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -66.0,
-        "unrealized_pnl_cents": -2.0,
-        "total_pnl_cents": -68.0
-      },
       {
         "time": "2026-02-14T20:09:40.376461Z",
         "strategy": "spot_edge",
@@ -285,25 +263,36 @@
         "realized_pnl_cents": -66.0,
         "unrealized_pnl_cents": -2.0,
         "total_pnl_cents": -68.0
+      },
+      {
+        "time": "2026-02-14T20:11:45.243910Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -156.0,
+        "unrealized_pnl_cents": -11.0,
+        "total_pnl_cents": -167.0
+      },
+      {
+        "time": "2026-02-14T20:11:46.437835Z",
+        "strategy": "overreaction_reversion",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -66.0,
+        "unrealized_pnl_cents": -2.0,
+        "total_pnl_cents": -68.0
       }
     ],
     "by_strategy": {
       "overreaction_reversion": {
         "active": true,
-        "last_updated": "2026-02-14T20:11:32.772663Z",
+        "last_updated": "2026-02-14T20:11:46.433664Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-14T20:09:00.714604Z",
-            "strategy": "overreaction_reversion",
-            "focused_market_count": 3,
-            "open_positions": 3,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -66.0,
-            "unrealized_pnl_cents": -2.0,
-            "total_pnl_cents": -68.0
-          },
           {
             "time": "2026-02-14T20:09:14.379546Z",
             "strategy": "overreaction_reversion",
@@ -424,6 +413,17 @@
             "realized_pnl_cents": -66.0,
             "unrealized_pnl_cents": -2.0,
             "total_pnl_cents": -68.0
+          },
+          {
+            "time": "2026-02-14T20:11:46.437835Z",
+            "strategy": "overreaction_reversion",
+            "focused_market_count": 3,
+            "open_positions": 3,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": -66.0,
+            "unrealized_pnl_cents": -2.0,
+            "total_pnl_cents": -68.0
           }
         ],
         "open_positions": 3,
@@ -431,20 +431,9 @@
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-14T20:11:31.593939Z",
+        "last_updated": "2026-02-14T20:11:45.240041Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-14T20:08:59.477573Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 3,
-            "open_positions": 3,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -156.0,
-            "unrealized_pnl_cents": -11.0,
-            "total_pnl_cents": -167.0
-          },
           {
             "time": "2026-02-14T20:09:13.183705Z",
             "strategy": "spot_edge",
@@ -557,6 +546,17 @@
           },
           {
             "time": "2026-02-14T20:11:31.597690Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 3,
+            "open_positions": 3,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": -156.0,
+            "unrealized_pnl_cents": -11.0,
+            "total_pnl_cents": -167.0
+          },
+          {
+            "time": "2026-02-14T20:11:45.243910Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
             "open_positions": 3,
