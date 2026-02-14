@@ -40,7 +40,7 @@ function render(data) {
     row("FOCUSED_LAST", loop.focused_market_count_last_cycle ?? 0),
   ].join("");
 
-  const rules = strat.rules || {};
+  const rules = targetStrategy ? ((strat.configs || {})[targetStrategy] || strat.rules || {}) : (strat.rules || {});
   q("market").innerHTML = [
     row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
     row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
