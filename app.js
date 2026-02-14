@@ -8,6 +8,13 @@ function fmtPnl(v) {
   return `${Number(v || 0).toFixed(2)}c`;
 }
 
+function fmtTs(s) {
+  if (!s) return "none";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return String(s);
+  return d.toLocaleString([], { hour: 'numeric', minute: '2-digit', second: '2-digit', month: 'short', day: 'numeric' });
+}
+
 function render(data) {
   const loop = data.loop || {};
   const strat = data.strategy || {};
@@ -21,7 +28,7 @@ function render(data) {
   q("system").innerHTML = [
     row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
     row("MODE", strat.mode || "paper_only"),
-    row("LAST_UPDATE", loop.last_updated || "none"),
+    row("LAST_UPDATE", fmtTs(loop.last_updated)),
     row("POLL", `${strat.poll_seconds ?? "?"}s`),
     row("SERIES", (strat.series_tickers || []).join(",") || "none"),
     row("FOCUSED_LAST", loop.focused_market_count_last_cycle ?? 0),
