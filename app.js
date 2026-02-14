@@ -16,6 +16,7 @@ function render(data) {
   const trades = data.recent_trades || [];
   const byAsset = perf.by_asset || {};
   const evalr = data.self_eval || {};
+  const recentCycles = loop.recent_cycles || [];
 
   q("system").innerHTML = [
     row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
@@ -35,6 +36,8 @@ function render(data) {
     row("MIN VOLUME", rules.min_volume ?? "?"),
     row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
     row("MAX OPEN", rules.max_open_positions ?? "?"),
+    row("SELL YES >=", `${rules.sell_yes_above_cents ?? "?"}c`),
+    row("MOMENTUM >=", `${rules.momentum_min_cents ?? "?"}c`),
     row("EVAL", evalr.decision || "n/a"),
     row("EVAL WR", `${evalr.win_rate_pct ?? "?"}%`),
     row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
@@ -63,6 +66,15 @@ function render(data) {
     `${t.time} | ${t.asset || "UNK"} | ${t.ticker} | pnl=${Number(t.pnl_cents || 0).toFixed(2)}c | ${t.reason || "n/a"}`
   );
   q("artifacts").textContent = tradeLines.length ? tradeLines.join("\n") : "No recent closed trades.";
+
+  const totals = recentCycles.map(c => Number(c.total_pnl_cents || 0));
+  const maxAbs = Math.max(1, ...totals.map(v => Math.abs(v)));
+  q("profitChart").innerHTML = totals.length
+    ? totals.map(v => {
+        const h = Math.max(6, Math.round((Math.abs(v) / maxAbs) * 56));
+        return `<div class="profit-bar ${v < 0 ? "neg" : ""}" style="height:${h}px" title="${v.toFixed(2)}c"></div>`;
+      }).join("")
+    : "";
 
   q("statusText").textContent = loop.active ? "ONLINE / 15M LOOP ACTIVE" : "ONLINE / LOOP INACTIVE";
 }
