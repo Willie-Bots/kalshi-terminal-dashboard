@@ -47,7 +47,7 @@ function render(data) {
     row("ALLOW NO", String(rules.allow_no_trades ?? true)),
     row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
     row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
-    row("MAX HOLD", `${rules.max_hold_minutes ?? "?"}m`),
+    row("MAX HOLD", (rules.max_hold_minutes == null || Number(rules.max_hold_minutes) <= 0) ? "OFF" : `${rules.max_hold_minutes}m`),
     row("MIN VOLUME", rules.min_volume ?? "?"),
     row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
     row("SPIKE FILTER", `${rules.spike_filter_bps ?? "?"}bps`),
