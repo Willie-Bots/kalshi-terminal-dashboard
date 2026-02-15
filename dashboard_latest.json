@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-15T06:40:05.976875Z",
+  "generated_at": "2026-02-15T06:40:07.048078Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -103,20 +103,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-15T06:40:05.456556Z",
+    "last_updated": "2026-02-15T06:40:06.791417Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-15T06:38:33.849303Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -1969.0,
-        "unrealized_pnl_cents": -9.0,
-        "total_pnl_cents": -1978.0
-      },
       {
         "time": "2026-02-15T06:38:34.761000Z",
         "strategy": "sports_odds_dislocation",
@@ -325,6 +314,26 @@
         "realized_pnl_cents": -6.0,
         "unrealized_pnl_cents": -12.0,
         "total_pnl_cents": -18.0
+      },
+      {
+        "time": "2026-02-15T06:40:06.803849Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 3,
+        "open_positions": 1,
+        "opened": [
+          {
+            "ticker": "KXBTC15M-26FEB150145-45",
+            "asset": "BTC",
+            "side": "YES",
+            "entry": 58.0,
+            "score": 22.9,
+            "strategy": "spot_edge"
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": -2300.0,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": -2300.0
       }
     ],
     "by_strategy": {
@@ -612,20 +621,9 @@
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-15T06:39:51.772482Z",
+        "last_updated": "2026-02-15T06:40:06.791417Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-15T06:37:06.341943Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 3,
-            "open_positions": 0,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -2300.0,
-            "unrealized_pnl_cents": 0,
-            "total_pnl_cents": -2300.0
-          },
           {
             "time": "2026-02-15T06:37:21.391287Z",
             "strategy": "spot_edge",
@@ -746,15 +744,35 @@
             "realized_pnl_cents": -2300.0,
             "unrealized_pnl_cents": 0,
             "total_pnl_cents": -2300.0
+          },
+          {
+            "time": "2026-02-15T06:40:06.803849Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 3,
+            "open_positions": 1,
+            "opened": [
+              {
+                "ticker": "KXBTC15M-26FEB150145-45",
+                "asset": "BTC",
+                "side": "YES",
+                "entry": 58.0,
+                "score": 22.9,
+                "strategy": "spot_edge"
+              }
+            ],
+            "closed": [],
+            "realized_pnl_cents": -2300.0,
+            "unrealized_pnl_cents": 0.0,
+            "total_pnl_cents": -2300.0
           }
         ],
-        "open_positions": 0,
+        "open_positions": 1,
         "total_pnl_cents": -2300.0
       }
     }
   },
   "performance": {
-    "open_positions": 7,
+    "open_positions": 8,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
     "total_pnl_cents": -4275.0,
@@ -942,6 +960,25 @@
       "shadow": false,
       "score": 4.86,
       "unrealized_pnl_cents": -3.0
+    },
+    "spot_edge:KXBTC15M-26FEB150145-45": {
+      "opened_at": "2026-02-15T06:40:06.791211Z",
+      "asset": "BTC",
+      "title": "BTC price up in next 15 mins?",
+      "strategy": "spot_edge",
+      "side": "YES",
+      "qty": 1,
+      "entry_price": 58.0,
+      "mark_price": 58.0,
+      "signal": {
+        "mom_bps": -2.928,
+        "vol_bps": 2.004,
+        "z": -0.732,
+        "p_up": 0.341
+      },
+      "shadow": false,
+      "score": 22.9,
+      "unrealized_pnl_cents": 0.0
     }
   },
   "recent_trades": [
