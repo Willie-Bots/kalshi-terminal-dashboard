@@ -53,6 +53,7 @@ function render(data) {
     row("MAX OPEN", rules.max_open_positions ?? "?"),
     row("MOMENTUM >=", `${rules.min_momentum_bps ?? "?"}bps`),
     row("MIN EDGE", `${rules.min_edge_cents ?? "?"}c`),
+    row("MIN DISLOC", `${rules.min_dislocation_cents ?? "n/a"}c`),
     row("EVAL", evalr.decision || "n/a"),
     row("EVAL WR", `${evalr.win_rate_pct ?? "?"}%`),
     row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
