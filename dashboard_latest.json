@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-15T02:19:18.847059Z",
+  "generated_at": "2026-02-15T02:19:33.997373Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -103,42 +103,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-15T02:19:18.616874Z",
+    "last_updated": "2026-02-15T02:19:33.766549Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-15T02:17:46.664209Z",
-        "strategy": "sports_odds_dislocation",
-        "focused_market_count": 0,
-        "open_positions": 0,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 0.0,
-        "unrealized_pnl_cents": 0,
-        "total_pnl_cents": 0.0
-      },
-      {
-        "time": "2026-02-15T02:17:48.306624Z",
-        "strategy": "spot_edge",
-        "focused_market_count": 3,
-        "open_positions": 2,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -1417.0,
-        "unrealized_pnl_cents": 4.0,
-        "total_pnl_cents": -1413.0
-      },
-      {
-        "time": "2026-02-15T02:18:00.908537Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 3,
-        "open_positions": 1,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -1297.0,
-        "unrealized_pnl_cents": -3.0,
-        "total_pnl_cents": -1300.0
-      },
       {
         "time": "2026-02-15T02:18:01.782865Z",
         "strategy": "sports_odds_dislocation",
@@ -356,25 +323,78 @@
         "realized_pnl_cents": -1421.0,
         "unrealized_pnl_cents": 1.0,
         "total_pnl_cents": -1420.0
+      },
+      {
+        "time": "2026-02-15T02:19:31.306984Z",
+        "strategy": "overreaction_reversion",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXSOL15M-26FEB142130-30",
+            "asset": "SOL",
+            "side": "YES",
+            "entry": 59.0,
+            "score": 0.167,
+            "strategy": "overreaction_reversion"
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": -1297.0,
+        "unrealized_pnl_cents": -3.0,
+        "total_pnl_cents": -1300.0
+      },
+      {
+        "time": "2026-02-15T02:19:32.199358Z",
+        "strategy": "sports_odds_dislocation",
+        "focused_market_count": 0,
+        "open_positions": 0,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 0.0,
+        "unrealized_pnl_cents": 0,
+        "total_pnl_cents": 0.0
+      },
+      {
+        "time": "2026-02-15T02:19:33.775778Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 3,
+        "open_positions": 3,
+        "opened": [
+          {
+            "ticker": "KXETH15M-26FEB142130-30",
+            "asset": "ETH",
+            "side": "YES",
+            "entry": 61.0,
+            "score": 25.63,
+            "strategy": "spot_edge"
+          }
+        ],
+        "closed": [
+          {
+            "time": "2026-02-15T02:19:33.765290Z",
+            "ticker": "KXETH15M-26FEB142130-30",
+            "asset": "ETH",
+            "strategy": "spot_edge",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 62.0,
+            "exit": 58.0,
+            "pnl_cents": -4.0,
+            "reason": "stop_loss"
+          }
+        ],
+        "realized_pnl_cents": -1425.0,
+        "unrealized_pnl_cents": 4.0,
+        "total_pnl_cents": -1421.0
       }
     ],
     "by_strategy": {
       "overreaction_reversion": {
         "active": true,
-        "last_updated": "2026-02-15T02:19:16.246271Z",
+        "last_updated": "2026-02-15T02:19:31.297975Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-15T02:16:30.347370Z",
-            "strategy": "overreaction_reversion",
-            "focused_market_count": 3,
-            "open_positions": 1,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -1297.0,
-            "unrealized_pnl_cents": -3.0,
-            "total_pnl_cents": -1300.0
-          },
           {
             "time": "2026-02-15T02:16:45.744506Z",
             "strategy": "overreaction_reversion",
@@ -495,27 +515,36 @@
             "realized_pnl_cents": -1297.0,
             "unrealized_pnl_cents": -3.0,
             "total_pnl_cents": -1300.0
+          },
+          {
+            "time": "2026-02-15T02:19:31.306984Z",
+            "strategy": "overreaction_reversion",
+            "focused_market_count": 3,
+            "open_positions": 2,
+            "opened": [
+              {
+                "ticker": "KXSOL15M-26FEB142130-30",
+                "asset": "SOL",
+                "side": "YES",
+                "entry": 59.0,
+                "score": 0.167,
+                "strategy": "overreaction_reversion"
+              }
+            ],
+            "closed": [],
+            "realized_pnl_cents": -1297.0,
+            "unrealized_pnl_cents": -3.0,
+            "total_pnl_cents": -1300.0
           }
         ],
-        "open_positions": 1,
+        "open_positions": 2,
         "total_pnl_cents": -1300.0
       },
       "sports_odds_dislocation": {
         "active": true,
-        "last_updated": "2026-02-15T02:19:17.103528Z",
+        "last_updated": "2026-02-15T02:19:32.198775Z",
         "focused_market_count_last_cycle": 0,
         "recent_cycles": [
-          {
-            "time": "2026-02-15T02:16:31.301068Z",
-            "strategy": "sports_odds_dislocation",
-            "focused_market_count": 0,
-            "open_positions": 0,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": 0.0,
-            "unrealized_pnl_cents": 0,
-            "total_pnl_cents": 0.0
-          },
           {
             "time": "2026-02-15T02:16:46.620309Z",
             "strategy": "sports_odds_dislocation",
@@ -636,6 +665,17 @@
             "realized_pnl_cents": 0.0,
             "unrealized_pnl_cents": 0,
             "total_pnl_cents": 0.0
+          },
+          {
+            "time": "2026-02-15T02:19:32.199358Z",
+            "strategy": "sports_odds_dislocation",
+            "focused_market_count": 0,
+            "open_positions": 0,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": 0.0,
+            "unrealized_pnl_cents": 0,
+            "total_pnl_cents": 0.0
           }
         ],
         "open_positions": 0,
@@ -643,20 +683,9 @@
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-15T02:19:18.616874Z",
+        "last_updated": "2026-02-15T02:19:33.766549Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-15T02:16:32.775411Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 3,
-            "open_positions": 2,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -1417.0,
-            "unrealized_pnl_cents": 4.0,
-            "total_pnl_cents": -1413.0
-          },
           {
             "time": "2026-02-15T02:16:48.169568Z",
             "strategy": "spot_edge",
@@ -808,22 +837,55 @@
             "realized_pnl_cents": -1421.0,
             "unrealized_pnl_cents": 1.0,
             "total_pnl_cents": -1420.0
+          },
+          {
+            "time": "2026-02-15T02:19:33.775778Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 3,
+            "open_positions": 3,
+            "opened": [
+              {
+                "ticker": "KXETH15M-26FEB142130-30",
+                "asset": "ETH",
+                "side": "YES",
+                "entry": 61.0,
+                "score": 25.63,
+                "strategy": "spot_edge"
+              }
+            ],
+            "closed": [
+              {
+                "time": "2026-02-15T02:19:33.765290Z",
+                "ticker": "KXETH15M-26FEB142130-30",
+                "asset": "ETH",
+                "strategy": "spot_edge",
+                "side": "YES",
+                "qty": 1.0,
+                "entry": 62.0,
+                "exit": 58.0,
+                "pnl_cents": -4.0,
+                "reason": "stop_loss"
+              }
+            ],
+            "realized_pnl_cents": -1425.0,
+            "unrealized_pnl_cents": 4.0,
+            "total_pnl_cents": -1421.0
           }
         ],
         "open_positions": 3,
-        "total_pnl_cents": -1420.0
+        "total_pnl_cents": -1421.0
       }
     }
   },
   "performance": {
-    "open_positions": 4,
+    "open_positions": 5,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
-    "total_pnl_cents": -2718.0,
-    "trades_total": 864,
+    "total_pnl_cents": -2722.0,
+    "trades_total": 865,
     "wins": 194,
-    "losses": 643,
-    "win_rate": 22.5,
+    "losses": 644,
+    "win_rate": 22.4,
     "by_asset": {
       "BTC": {
         "trades": 247,
@@ -833,11 +895,11 @@
         "win_rate": 28.7
       },
       "ETH": {
-        "trades": 349,
+        "trades": 350,
         "wins": 75,
-        "losses": 267,
-        "pnl_cents": -1248.0,
-        "win_rate": 21.5
+        "losses": 268,
+        "pnl_cents": -1252.0,
+        "win_rate": 21.4
       },
       "SOL": {
         "trades": 268,
@@ -863,11 +925,11 @@
         "pnl_cents": 0
       },
       "spot_edge": {
-        "trades": 441,
+        "trades": 442,
         "wins": 107,
-        "losses": 317,
-        "win_rate": 24.3,
-        "pnl_cents": -1421.0
+        "losses": 318,
+        "win_rate": 24.2,
+        "pnl_cents": -1425.0
       }
     }
   },
@@ -888,6 +950,23 @@
       },
       "score": 0.717,
       "unrealized_pnl_cents": -3.0
+    },
+    "overreaction_reversion:KXSOL15M-26FEB142130-30": {
+      "opened_at": "2026-02-15T02:19:31.297785Z",
+      "asset": "SOL",
+      "title": "SOL price up in next 15 mins?",
+      "strategy": "overreaction_reversion",
+      "side": "YES",
+      "qty": 1,
+      "entry_price": 59.0,
+      "mark_price": 59.0,
+      "signal": {
+        "move_cents": -6.5,
+        "vol_cents": 3.481,
+        "z": -1.867
+      },
+      "score": 0.167,
+      "unrealized_pnl_cents": 0.0
     },
     "spot_edge:KXBTC15M-26FEB142115-15": {
       "opened_at": "2026-02-15T02:10:19.341052Z",
@@ -926,37 +1005,25 @@
       "unrealized_pnl_cents": 0.0
     },
     "spot_edge:KXETH15M-26FEB142130-30": {
-      "opened_at": "2026-02-15T02:19:03.421769Z",
+      "opened_at": "2026-02-15T02:19:33.766364Z",
       "asset": "ETH",
       "title": "ETH price up in next 15 mins?",
       "strategy": "spot_edge",
       "side": "YES",
       "qty": 1,
-      "entry_price": 62.0,
-      "mark_price": 59.0,
+      "entry_price": 61.0,
+      "mark_price": 61.0,
       "signal": {
-        "mom_bps": -5.482,
-        "vol_bps": 3.365,
-        "z": -1.371,
-        "p_up": 0.2256
+        "mom_bps": -3.275,
+        "vol_bps": 3.373,
+        "z": -0.819,
+        "p_up": 0.3237
       },
-      "score": 35.44,
-      "unrealized_pnl_cents": -3.0
+      "score": 25.63,
+      "unrealized_pnl_cents": 0.0
     }
   },
   "recent_trades": [
-    {
-      "time": "2026-02-15T02:05:16.848657Z",
-      "ticker": "KXBTC15M-26FEB142115-15",
-      "asset": "BTC",
-      "strategy": "overreaction_reversion",
-      "side": "YES",
-      "qty": 1.0,
-      "entry": 20.0,
-      "exit": 34.0,
-      "pnl_cents": 14.0,
-      "reason": "take_profit"
-    },
     {
       "time": "2026-02-15T02:05:16.848728Z",
       "ticker": "KXSOL15M-26FEB142115-15",
@@ -1415,6 +1482,18 @@
     },
     {
       "time": "2026-02-15T02:19:03.420792Z",
+      "ticker": "KXETH15M-26FEB142130-30",
+      "asset": "ETH",
+      "strategy": "spot_edge",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 62.0,
+      "exit": 58.0,
+      "pnl_cents": -4.0,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-15T02:19:33.765290Z",
       "ticker": "KXETH15M-26FEB142130-30",
       "asset": "ETH",
       "strategy": "spot_edge",
