@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-15T06:10:06.631062Z",
+  "generated_at": "2026-02-15T06:10:07.862256Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -103,20 +103,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-15T06:10:06.203912Z",
+    "last_updated": "2026-02-15T06:10:07.611185Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-15T06:08:24.902031Z",
-        "strategy": "overreaction_reversion",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -1969.0,
-        "unrealized_pnl_cents": -9.0,
-        "total_pnl_cents": -1978.0
-      },
       {
         "time": "2026-02-15T06:08:25.841276Z",
         "strategy": "sports_odds_dislocation",
@@ -347,6 +336,26 @@
         "realized_pnl_cents": -6.0,
         "unrealized_pnl_cents": -12.0,
         "total_pnl_cents": -18.0
+      },
+      {
+        "time": "2026-02-15T06:10:07.623508Z",
+        "strategy": "spot_edge",
+        "focused_market_count": 3,
+        "open_positions": 2,
+        "opened": [
+          {
+            "ticker": "KXSOL15M-26FEB150115-15",
+            "asset": "SOL",
+            "side": "YES",
+            "entry": 59.0,
+            "score": 28.58,
+            "strategy": "spot_edge"
+          }
+        ],
+        "closed": [],
+        "realized_pnl_cents": -2181.0,
+        "unrealized_pnl_cents": 7.0,
+        "total_pnl_cents": -2174.0
       }
     ],
     "by_strategy": {
@@ -634,20 +643,9 @@
       },
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-15T06:09:52.586283Z",
+        "last_updated": "2026-02-15T06:10:07.611185Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-15T06:06:57.527926Z",
-            "strategy": "spot_edge",
-            "focused_market_count": 3,
-            "open_positions": 2,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -2148.0,
-            "unrealized_pnl_cents": -1.0,
-            "total_pnl_cents": -2149.0
-          },
           {
             "time": "2026-02-15T06:07:12.912245Z",
             "strategy": "spot_edge",
@@ -847,15 +845,35 @@
             "realized_pnl_cents": -2181.0,
             "unrealized_pnl_cents": 7.0,
             "total_pnl_cents": -2174.0
+          },
+          {
+            "time": "2026-02-15T06:10:07.623508Z",
+            "strategy": "spot_edge",
+            "focused_market_count": 3,
+            "open_positions": 2,
+            "opened": [
+              {
+                "ticker": "KXSOL15M-26FEB150115-15",
+                "asset": "SOL",
+                "side": "YES",
+                "entry": 59.0,
+                "score": 28.58,
+                "strategy": "spot_edge"
+              }
+            ],
+            "closed": [],
+            "realized_pnl_cents": -2181.0,
+            "unrealized_pnl_cents": 7.0,
+            "total_pnl_cents": -2174.0
           }
         ],
-        "open_positions": 1,
+        "open_positions": 2,
         "total_pnl_cents": -2174.0
       }
     }
   },
   "performance": {
-    "open_positions": 8,
+    "open_positions": 9,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
     "total_pnl_cents": -4156.0,
@@ -1062,6 +1080,25 @@
       "shadow": false,
       "score": 16.81,
       "unrealized_pnl_cents": 7.0
+    },
+    "spot_edge:KXSOL15M-26FEB150115-15": {
+      "opened_at": "2026-02-15T06:10:07.610966Z",
+      "asset": "SOL",
+      "title": "SOL price up in next 15 mins?",
+      "strategy": "spot_edge",
+      "side": "YES",
+      "qty": 1,
+      "entry_price": 59.0,
+      "mark_price": 59.0,
+      "signal": {
+        "mom_bps": -6.683,
+        "vol_bps": 6.875,
+        "z": -0.972,
+        "p_up": 0.2942
+      },
+      "shadow": false,
+      "score": 28.58,
+      "unrealized_pnl_cents": 0.0
     }
   },
   "recent_trades": [
