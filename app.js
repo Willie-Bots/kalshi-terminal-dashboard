@@ -29,6 +29,7 @@ function render(data) {
   const strategyPerf = targetStrategy ? (byStrategy[targetStrategy] || { trades: 0, wins: 0, losses: 0, pnl_cents: 0, win_rate: 0 }) : null;
   const evalr = data.self_eval || {};
   const recentCycles = loop.recent_cycles || [];
+  const sports = data.sports_alignment || {};
 
   q("system").innerHTML = [
     row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
@@ -82,6 +83,11 @@ function render(data) {
     `${t.time} | ${t.asset || "UNK"} | ${t.ticker} | pnl=${Number(t.pnl_cents || 0).toFixed(2)}c | ${t.reason || "n/a"}`
   );
   q("artifacts").textContent = tradeLines.length ? tradeLines.join("\n") : "No recent closed trades.";
+
+  const dis = sports.top_dislocations || [];
+  const disLines = dis.slice(0, 10).map((d, i) => `${i+1}. ${d.event_title}\n   ${d.team} | ask=${d.kalshi_yes_ask}c fair=${d.sportsbook_fair_yes}c edge=${d.edge_cents}c`);
+  const sportsText = `aligned=${sports.aligned_count ?? 0} | updated=${sports.generated_at || 'n/a'}\n\n` + (disLines.length ? disLines.join("\n\n") : "No dislocations yet.");
+  if (q("sportsOps")) q("sportsOps").textContent = sportsText;
 
   const totals = recentCycles.map(c => Number(c.total_pnl_cents || 0));
   const maxAbs = Math.max(1, ...totals.map(v => Math.abs(v)));
