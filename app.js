@@ -20,6 +20,7 @@ function render(data) {
   const loop = data.loop || {};
   const strat = data.strategy || {};
   const perf = data.performance || {};
+  const loopByStrategy = loop.by_strategy || {};
   const allPositions = data.positions || {};
   const allTrades = data.recent_trades || [];
   const positions = targetStrategy ? Object.fromEntries(Object.entries(allPositions).filter(([,p]) => (p.strategy || data.strategy?.name) === targetStrategy)) : allPositions;
@@ -27,18 +28,19 @@ function render(data) {
   const byAsset = perf.by_asset || {};
   const byStrategy = perf.by_strategy || {};
   const strategyPerf = targetStrategy ? (byStrategy[targetStrategy] || { trades: 0, wins: 0, losses: 0, pnl_cents: 0, win_rate: 0 }) : null;
+  const strategyLoop = targetStrategy ? (loopByStrategy[targetStrategy] || {}) : null;
   const evalr = data.self_eval || {};
   const recentCycles = loop.recent_cycles || [];
   const sports = data.sports_alignment || {};
 
   q("system").innerHTML = [
-    row("ACTIVE", String(!!loop.active), loop.active ? "good" : "bad"),
+    row("ACTIVE", String(targetStrategy ? !!strategyLoop.active : !!loop.active), (targetStrategy ? strategyLoop.active : loop.active) ? "good" : "bad"),
     row("MODE", strat.mode || "paper_only"),
     row("STRATEGY", targetStrategy || strat.name || 'active'),
-    row("LAST_UPDATE", fmtTs(loop.last_updated)),
+    row("LAST_UPDATE", fmtTs(targetStrategy ? strategyLoop.last_updated : loop.last_updated)),
     row("POLL", `${strat.poll_seconds ?? "?"}s`),
     row("SERIES", (strat.series_tickers || []).join(",") || "none"),
-    row("FOCUSED_LAST", loop.focused_market_count_last_cycle ?? 0),
+    row("FOCUSED_LAST", targetStrategy ? (strategyLoop.focused_market_count_last_cycle ?? 0) : (loop.focused_market_count_last_cycle ?? 0)),
   ].join("");
 
   const rules = targetStrategy ? ((strat.configs || {})[targetStrategy] || strat.rules || {}) : (strat.rules || {});
@@ -89,7 +91,8 @@ function render(data) {
   const sportsText = `aligned=${sports.aligned_count ?? 0} | updated=${sports.generated_at || 'n/a'}\n\n` + (disLines.length ? disLines.join("\n\n") : "No dislocations yet.");
   if (q("sportsOps")) q("sportsOps").textContent = sportsText;
 
-  const totals = recentCycles.map(c => Number(c.total_pnl_cents || 0));
+  const cycleSource = targetStrategy ? (strategyLoop.recent_cycles || []) : recentCycles;
+  const totals = cycleSource.map(c => Number(c.total_pnl_cents || 0));
   const maxAbs = Math.max(1, ...totals.map(v => Math.abs(v)));
   q("profitChart").innerHTML = totals.length
     ? totals.map(v => {
@@ -98,7 +101,8 @@ function render(data) {
       }).join("")
     : "";
 
-  q("statusText").textContent = loop.active ? "ONLINE / 15M LOOP ACTIVE" : "ONLINE / LOOP INACTIVE";
+  const isActive = targetStrategy ? !!strategyLoop.active : !!loop.active;
+  q("statusText").textContent = isActive ? "ONLINE / STRATEGY ACTIVE" : "ONLINE / STRATEGY INACTIVE";
 }
 
 async function load() {
