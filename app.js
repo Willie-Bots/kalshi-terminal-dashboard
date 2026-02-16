@@ -31,7 +31,7 @@ function render(data) {
   const strategyLoop = targetStrategy ? (loopByStrategy[targetStrategy] || {}) : null;
   const evalr = data.self_eval || {};
   const recentCycles = loop.recent_cycles || [];
-  const sports = data.sports_alignment || {};
+  const runningLogs = data.running_logs || {};
 
   q("system").innerHTML = [
     row("ACTIVE", String(targetStrategy ? !!strategyLoop.active : !!loop.active), (targetStrategy ? strategyLoop.active : loop.active) ? "good" : "bad"),
@@ -86,10 +86,10 @@ function render(data) {
   );
   q("artifacts").textContent = tradeLines.length ? tradeLines.join("\n") : "No recent closed trades.";
 
-  const dis = sports.top_dislocations || [];
-  const disLines = dis.slice(0, 10).map((d, i) => `${i+1}. ${d.event_title}\n   ${d.team} | ask=${d.kalshi_yes_ask}c fair=${d.sportsbook_fair_yes}c edge=${d.edge_cents}c`);
-  const sportsText = `aligned=${sports.aligned_count ?? 0} | updated=${sports.generated_at || 'n/a'}\n\n` + (disLines.length ? disLines.join("\n\n") : "No dislocations yet.");
-  if (q("sportsOps")) q("sportsOps").textContent = sportsText;
+  const logLines = targetStrategy
+    ? (runningLogs[targetStrategy] || [])
+    : Object.entries(runningLogs).flatMap(([k, lines]) => (lines || []).slice(-4).map((ln) => `${k} ${ln}`));
+  if (q("runLog")) q("runLog").textContent = logLines.length ? logLines.join("\n") : "No runtime log lines yet.";
 
   const cycleSource = targetStrategy ? (strategyLoop.recent_cycles || []) : recentCycles;
   const totals = cycleSource.map(c => Number(c.total_pnl_cents || 0));
