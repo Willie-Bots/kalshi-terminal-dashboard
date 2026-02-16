@@ -1,74 +1,122 @@
-const DATA_URL = './dashboard_latest.json';
-const $ = (id) => document.getElementById(id);
-const qp = new URLSearchParams(location.search);
-const strategy = qp.get('strategy') || '';
-const cents = (n) => `${n >= 0 ? '+' : '-'}$${Math.abs(Number(n || 0) / 100).toFixed(2)}`;
+const q = (id) => document.getElementById(id);
 
-function drawLine(canvas, vals) {
-  const ctx = canvas.getContext('2d');
-  canvas.width = canvas.clientWidth * devicePixelRatio;
-  canvas.height = canvas.clientHeight * devicePixelRatio;
-  ctx.scale(devicePixelRatio, devicePixelRatio);
-  const W = canvas.clientWidth, H = canvas.clientHeight;
-  ctx.clearRect(0, 0, W, H);
-  if (!vals.length) return;
-  const min = Math.min(...vals), max = Math.max(...vals), span = (max - min) || 1;
-  ctx.beginPath();
-  vals.forEach((v, i) => {
-    const x = (i / Math.max(vals.length - 1, 1)) * (W - 20) + 10;
-    const y = H - 12 - ((v - min) / span) * (H - 24);
-    i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
-  });
-  ctx.strokeStyle = vals[vals.length - 1] >= 0 ? '#69f0ae' : '#ff6b6b';
-  ctx.lineWidth = 2;
-  ctx.stroke();
+function row(k, v, cls = "") {
+  return `<div class="row ${cls}"><span>${k}</span><span>${v}</span></div>`;
 }
 
-function outline(cfg = {}) {
-  return [
-    `trade_assets: ${(cfg.trade_assets || []).join(', ') || 'n/a'}`,
-    `take_profit_cents: ${cfg.take_profit_cents ?? 'n/a'}`,
-    `stop_loss_cents: ${cfg.stop_loss_cents ?? 'n/a'}`,
-    `max_hold_minutes: ${cfg.max_hold_minutes ?? 'n/a'}`,
-    `min_edge_cents: ${cfg.min_edge_cents ?? 'n/a'}`,
-    `min_momentum_bps: ${cfg.min_momentum_bps ?? 'n/a'}`,
-    `spike_filter_bps: ${cfg.spike_filter_bps ?? 'n/a'}`,
-    `max_open_positions: ${cfg.max_open_positions ?? 'n/a'}`,
-  ].join('\n');
+function fmtPnl(v) {
+  return `${Number(v || 0).toFixed(2)}c`;
 }
 
-async function boot() {
-  const data = await fetch(DATA_URL).then(r => r.json());
-  const available = data.strategy?.available || [];
-  const target = strategy || available[0] || 'unknown';
-
-  $('strategyName').textContent = target;
-  $('strategyMeta').textContent = `Updated ${new Date(data.generated_at).toLocaleString()}`;
-
-  const sPerf = data.performance?.by_strategy?.[target] || { pnl_cents: 0 };
-  const cycles = data.loop?.by_strategy?.[target]?.recent_cycles || [];
-  const series = cycles.map(c => Number(c.total_pnl_cents || 0));
-  drawLine($('strategyChart'), series.length ? series : [Number(sPerf.pnl_cents || 0)]);
-
-  const pnl = Number(sPerf.pnl_cents || 0);
-  $('strategyPnl').textContent = `PnL ${cents(pnl)}`;
-  $('strategyPnl').className = `kpi ${pnl >= 0 ? 'good' : 'bad'}`;
-
-  const trades = (data.recent_trades || []).filter(t => t.strategy === target).slice().reverse();
-  $('tradeRows').innerHTML = trades.length ? trades.map(t => `
-    <tr>
-      <td>${(t.time || '').slice(11,19)}</td>
-      <td>${t.ticker || ''}</td>
-      <td>${t.side || ''}</td>
-      <td>${t.entry ?? ''}</td>
-      <td>${t.exit ?? ''}</td>
-      <td class="${(t.pnl_cents||0)>=0?'good':'bad'}">${cents(t.pnl_cents || 0)}</td>
-      <td>${t.reason || ''}</td>
-    </tr>`).join('') : '<tr><td colspan="7">No trades yet.</td></tr>';
-
-  const cfg = data.strategy?.configs?.[target] || {};
-  $('strategyOutline').textContent = outline(cfg);
-  $('strategyScript').textContent = data.strategy?.scripts?.[target] || '# strategy script unavailable';
+function fmtTs(s) {
+  if (!s) return "none";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return "none";
+  return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
-boot().catch((e) => { $('strategyMeta').textContent = `Load error: ${e.message}`; });
+function render(data) {
+  const targetStrategy = new URLSearchParams(location.search).get('strategy');
+  const loop = data.loop || {};
+  const strat = data.strategy || {};
+  const perf = data.performance || {};
+  const loopByStrategy = loop.by_strategy || {};
+  const allPositions = data.positions || {};
+  const allTrades = data.recent_trades || [];
+  const positions = targetStrategy ? Object.fromEntries(Object.entries(allPositions).filter(([,p]) => (p.strategy || data.strategy?.name) === targetStrategy)) : allPositions;
+  const trades = targetStrategy ? allTrades.filter(t => (t.strategy || 'legacy') === targetStrategy) : allTrades;
+  const byAsset = perf.by_asset || {};
+  const byStrategy = perf.by_strategy || {};
+  const strategyPerf = targetStrategy ? (byStrategy[targetStrategy] || { trades: 0, wins: 0, losses: 0, pnl_cents: 0, win_rate: 0 }) : null;
+  const strategyLoop = targetStrategy ? (loopByStrategy[targetStrategy] || {}) : null;
+  const evalr = data.self_eval || {};
+  const recentCycles = loop.recent_cycles || [];
+  const sports = data.sports_alignment || {};
+
+  q("system").innerHTML = [
+    row("ACTIVE", String(targetStrategy ? !!strategyLoop.active : !!loop.active), (targetStrategy ? strategyLoop.active : loop.active) ? "good" : "bad"),
+    row("MODE", strat.mode || "paper_only"),
+    row("STRATEGY", targetStrategy || strat.name || 'active'),
+    row("LAST_UPDATE", fmtTs(targetStrategy ? strategyLoop.last_updated : loop.last_updated)),
+    row("POLL", `${strat.poll_seconds ?? "?"}s`),
+    row("SERIES", (strat.series_tickers || []).join(",") || "none"),
+    row("FOCUSED_LAST", targetStrategy ? (strategyLoop.focused_market_count_last_cycle ?? 0) : (loop.focused_market_count_last_cycle ?? 0)),
+  ].join("");
+
+  const rules = targetStrategy ? ((strat.configs || {})[targetStrategy] || strat.rules || {}) : (strat.rules || {});
+  q("market").innerHTML = [
+    row("ASSETS", (rules.trade_assets || []).join(',') || '?'),
+    row("ALLOW NO", String(rules.allow_no_trades ?? true)),
+    row("TAKE PROFIT", `${rules.take_profit_cents ?? "?"}c`),
+    row("STOP LOSS", `${rules.stop_loss_cents ?? "?"}c`),
+    row("MAX HOLD", (rules.max_hold_minutes == null || Number(rules.max_hold_minutes) <= 0) ? "OFF" : `${rules.max_hold_minutes}m`),
+    row("MIN VOLUME", rules.min_volume ?? "?"),
+    row("MAX SPREAD", `${rules.max_spread_cents ?? "?"}c`),
+    row("SPIKE FILTER", `${rules.spike_filter_bps ?? "?"}bps`),
+    row("MAX OPEN", rules.max_open_positions ?? "?"),
+    row("MOMENTUM >=", `${rules.min_momentum_bps ?? "?"}bps`),
+    row("MIN EDGE", `${rules.min_edge_cents ?? "?"}c`),
+    row("MIN DISLOC", `${rules.min_dislocation_cents ?? "n/a"}c`),
+    row("EVAL", evalr.decision || "n/a"),
+    row("EVAL WR", `${evalr.win_rate_pct ?? "?"}%`),
+    row("EVAL EXP", `${evalr.expectancy_cents ?? "?"}c`),
+  ].join("");
+
+  const assetLines = targetStrategy
+    ? [`${targetStrategy}: trades=${strategyPerf.trades} win_rate=${strategyPerf.win_rate}% pnl=${Number(strategyPerf.pnl_cents || 0).toFixed(2)}c`]
+    : Object.entries(byAsset).map(([a, s]) => `${a}: trades=${s.trades} win_rate=${s.win_rate}% pnl=${Number(s.pnl_cents || 0).toFixed(2)}c`);
+  q("candidates").textContent = assetLines.length ? assetLines.join("\n") : "No closed trades yet.";
+
+  q("paper").innerHTML = [
+    row("OPEN_POS", Object.keys(positions).length),
+    row("REALIZED", targetStrategy ? 'n/a' : fmtPnl(perf.realized_pnl_cents), Number(perf.realized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("UNREALIZED", targetStrategy ? 'n/a' : fmtPnl(perf.unrealized_pnl_cents), Number(perf.unrealized_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TOTAL", targetStrategy ? fmtPnl(strategyPerf.pnl_cents) : fmtPnl(perf.total_pnl_cents), Number(targetStrategy ? strategyPerf.pnl_cents : perf.total_pnl_cents) >= 0 ? "good" : "bad"),
+    row("TRADES", targetStrategy ? strategyPerf.trades : (perf.trades_total ?? 0)),
+    row("WIN RATE", `${targetStrategy ? strategyPerf.win_rate : (perf.win_rate ?? 0)}%`),
+  ].join("");
+
+  const posList = Object.entries(positions).map(([ticker, p]) =>
+    `${ticker}\n  ${p.asset || "UNK"} ${(p.side || "YES")} x${p.qty} entry=${p.entry_price} mark=${p.mark_price} uPnL=${p.unrealized_pnl_cents}c`
+  );
+  q("positions").textContent = posList.length ? posList.join("\n\n") : "No open positions.";
+
+  const tradeLines = trades.slice(-12).reverse().map((t) =>
+    `${t.time} | ${t.asset || "UNK"} | ${t.ticker} | pnl=${Number(t.pnl_cents || 0).toFixed(2)}c | ${t.reason || "n/a"}`
+  );
+  q("artifacts").textContent = tradeLines.length ? tradeLines.join("\n") : "No recent closed trades.";
+
+  const dis = sports.top_dislocations || [];
+  const disLines = dis.slice(0, 10).map((d, i) => `${i+1}. ${d.event_title}\n   ${d.team} | ask=${d.kalshi_yes_ask}c fair=${d.sportsbook_fair_yes}c edge=${d.edge_cents}c`);
+  const sportsText = `aligned=${sports.aligned_count ?? 0} | updated=${sports.generated_at || 'n/a'}\n\n` + (disLines.length ? disLines.join("\n\n") : "No dislocations yet.");
+  if (q("sportsOps")) q("sportsOps").textContent = sportsText;
+
+  const cycleSource = targetStrategy ? (strategyLoop.recent_cycles || []) : recentCycles;
+  const totals = cycleSource.map(c => Number(c.total_pnl_cents || 0));
+  const maxAbs = Math.max(1, ...totals.map(v => Math.abs(v)));
+  q("profitChart").innerHTML = totals.length
+    ? totals.map(v => {
+        const h = Math.max(4, Math.round((Math.abs(v) / maxAbs) * 36));
+        return `<div class="profit-col"><div class="profit-bar ${v < 0 ? "neg" : ""}" style="height:${h}px" title="${v.toFixed(2)}c"></div></div>`;
+      }).join("")
+    : "";
+
+  const isActive = targetStrategy ? !!strategyLoop.active : !!loop.active;
+  q("statusText").textContent = isActive ? "ONLINE / STRATEGY ACTIVE" : "ONLINE / STRATEGY INACTIVE";
+}
+
+async function load() {
+  q("clock").textContent = new Date().toLocaleTimeString();
+  try {
+    const res = await fetch("./dashboard_latest.json?ts=" + Date.now());
+    if (!res.ok) throw new Error("Failed to load dashboard data");
+    const data = await res.json();
+    render(data);
+  } catch (e) {
+    q("statusText").textContent = "DATA OFFLINE";
+    q("candidates").textContent = String(e.message || e);
+  }
+}
+
+load();
+setInterval(load, 15000);

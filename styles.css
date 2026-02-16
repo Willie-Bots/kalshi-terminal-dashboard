@@ -1,126 +1,95 @@
 :root {
-  --bg: #040707;
-  --panel: #050a0a;
-  --fg: #49f0b5;
-  --fg-strong: #9affd9;
-  --muted: #2fb184;
-  --line: #1ad89a;
-  --line-dim: rgba(26, 216, 154, 0.35);
-  --good: #8dffbe;
-  --bad: #ff7f9f;
+  --bg: #050505;
+  --panel: #0d0d0d;
+  --line: #1bff8a;
+  --dim: #0a7c43;
+  --warn: #ffe066;
+  --bad: #ff5f56;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  background: radial-gradient(circle at 50% -30%, #0a1513, #040707 45%);
-  color: var(--fg);
-  font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
-  text-shadow: 0 0 8px rgba(73, 240, 181, 0.18);
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  background: radial-gradient(circle at 50% 0%, #0f2317 0%, var(--bg) 35%);
+  color: var(--line);
+  min-height: 100vh;
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.03) 0,
-    rgba(255,255,255,0.03) 1px,
-    transparent 2px,
-    transparent 4px
-  );
-  opacity: 0.2;
+.crt {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px;
+  text-shadow: 0 0 4px rgba(27,255,138,0.35);
 }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 16px; }
-.top {
-  margin-bottom: 12px;
-  border: 2px solid var(--line-dim);
-  background: #050a0a;
-  padding: 12px 14px;
+.topbar, .status {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  background: var(--panel);
+  display: flex;
+  justify-content: space-between;
 }
-.top h1 {
-  margin: 0 0 4px;
-  font-size: 28px;
-  color: var(--fg-strong);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
 }
-.top p, .back { color: var(--muted); text-decoration: none; }
-.back:hover { color: var(--fg-strong); }
-
 .panel {
-  margin-top: 12px;
-  border: 2px solid var(--line);
-  background: #040808;
-  padding: 10px 12px;
-  box-shadow: inset 0 0 0 1px rgba(73,240,181,0.08), 0 0 18px rgba(39,208,150,.16);
+  border: 1px solid var(--line);
+  background: rgba(13,13,13,0.95);
+  padding: 10px;
+  min-height: 170px;
 }
+.panel.wide { grid-column: 1 / -1; }
 h2 {
-  margin: 0 0 10px;
-  color: var(--fg-strong);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 17px;
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #b9ffd8;
 }
-.kpi {
-  margin-top: 10px;
-  font-size: 26px;
-  letter-spacing: 0.03em;
-  font-weight: 700;
-}
-.good { color: var(--good); }
-.bad { color: var(--bad); }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: var(--fg);
-  font-size: 14px;
-}
-thead th {
-  text-transform: uppercase;
-  color: var(--fg-strong);
-  border-bottom: 1px dotted var(--line-dim);
-  padding: 8px 6px;
-  text-align: left;
-}
-td {
-  border-bottom: 1px dotted var(--line-dim);
-  padding: 8px 6px;
-}
-tr:hover td { background: rgba(73,240,181,0.06); }
-
-a.link {
-  color: var(--fg-strong);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--line-dim);
-}
-a.link:hover { color: #c9ffe9; border-bottom-color: var(--line); }
-
+.row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px dotted #145730; }
 pre {
   margin: 0;
   white-space: pre-wrap;
-  color: var(--fg-strong);
-  line-height: 1.5;
-  font-size: 14px;
+  word-break: break-word;
+  font-size: 12px;
+  line-height: 1.45;
 }
-summary {
-  color: var(--fg-strong);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-}
-canvas {
-  width: 100%;
-  background: #020505;
-  border: 1px solid var(--line-dim);
-}
+.bad { color: var(--bad); }
+.warn { color: var(--warn); }
+.good { color: var(--line); }
 
-/* mobile screenshot-like scale */
-@media (max-width: 760px) {
-  .wrap { padding: 10px; }
-  .top h1 { font-size: 22px; }
-  h2 { font-size: 18px; }
-  table, pre { font-size: 22px; }
-  .kpi { font-size: 22px; }
+.profit-chart {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  height: 84px;
+  padding: 4px 0;
+}
+.profit-chart::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dotted #145730;
+}
+.profit-col {
+  position: relative;
+  flex: 1;
+  min-width: 6px;
+}
+.profit-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  background: #145730;
+  border: 1px solid #1bff8a;
+  opacity: 0.9;
+}
+.profit-bar.neg {
+  top: 50%;
+  bottom: auto;
+  background: #5a1b1b;
+  border-color: #ff5f56;
 }

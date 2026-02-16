@@ -3,45 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strategy Detail</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>KALSHI 15M STRATEGY DETAIL</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <header class="top">
-      <a href="./index.html" class="back">← Dashboard</a>
-      <h1 id="strategyName">Strategy</h1>
-      <p id="strategyMeta">Loading…</p>
+  <main class="crt">
+    <header class="topbar">
+      <div>KALSHI_15M_LOOP DETAIL</div>
+      <div id="clock">--:--:--</div>
     </header>
 
-    <section class="panel">
-      <h2>PnL</h2>
-      <canvas id="strategyChart" height="160"></canvas>
-      <div id="strategyPnl" class="kpi"></div>
+    <section class="panel wide">
+      <h2>OVERALL PROFIT (RECENT CYCLES)</h2>
+      <div id="profitChart" class="profit-chart"></div>
     </section>
 
-    <section class="panel">
-      <h2>Trades</h2>
-      <table>
-        <thead>
-          <tr><th>Time</th><th>Ticker</th><th>Side</th><th>Entry</th><th>Exit</th><th>PnL</th><th>Reason</th></tr>
-        </thead>
-        <tbody id="tradeRows"></tbody>
-      </table>
+    <section class="grid">
+      <article class="panel"><h2>LOOP STATUS</h2><div id="system"></div></article>
+      <article class="panel"><h2>STRATEGY RULES</h2><div id="market"></div></article>
+      <article class="panel wide"><h2>ASSET PERFORMANCE (BTC/ETH/SOL 15M)</h2><pre id="candidates"></pre></article>
+      <article class="panel"><h2>PAPER PNL</h2><div id="paper"></div></article>
+      <article class="panel wide"><h2>OPEN POSITIONS</h2><pre id="positions"></pre></article>
+      <article class="panel wide"><h2>RECENT TRADES</h2><pre id="artifacts"></pre></article>
+      <article class="panel wide"><h2>SPORTS OPPORTUNITIES</h2><pre id="sportsOps"></pre></article>
     </section>
 
-    <section class="panel">
-      <h2>Strategy Outline</h2>
-      <pre id="strategyOutline"></pre>
-    </section>
-
-    <section class="panel">
-      <details>
-        <summary>Expand Script</summary>
-        <pre id="strategyScript"></pre>
-      </details>
-    </section>
+    <footer class="status">STATUS: <span id="statusText">LOADING...</span></footer>
   </main>
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

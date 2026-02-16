@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalshi Terminal Dashboard</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>KALSHI 15M STRATEGY HOME</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <header class="top">
-      <h1>Kalshi Terminal Dashboard</h1>
-      <p id="meta">Loading…</p>
+  <main class="crt">
+    <header class="topbar">
+      <div>KALSHI_STRATEGY_HOME</div>
+      <div id="clock">--:--:--</div>
     </header>
 
-    <section class="panel">
-      <h2>Overall PnL</h2>
-      <canvas id="overallChart" height="160"></canvas>
-      <div id="overallPnl" class="kpi"></div>
+    <section class="panel wide">
+      <h2>PARALLEL STRATEGY STATUS</h2>
+      <div id="active"></div>
     </section>
 
-    <section class="panel">
-      <h2>Strategies</h2>
-      <table>
-        <thead>
-          <tr><th>Strategy</th><th>Trades</th><th>Win Rate</th><th>PnL</th></tr>
-        </thead>
-        <tbody id="strategyRows"></tbody>
-      </table>
+    <section class="grid">
+      <article class="panel wide">
+        <h2>STRATEGY LIBRARY</h2>
+        <pre id="library"></pre>
+      </article>
+      <article class="panel wide">
+        <h2>QUICK LINKS</h2>
+        <pre>Combined detail (all): <a href="./strategy.html">/strategy.html</a>
+Spot-edge detail: <a href="./strategy.html?strategy=spot_edge">/strategy.html?strategy=spot_edge</a>
+Reversion detail: <a href="./strategy.html?strategy=overreaction_reversion">/strategy.html?strategy=overreaction_reversion</a>
+Sports dislocation detail: <a href="./strategy.html?strategy=sports_odds_dislocation">/strategy.html?strategy=sports_odds_dislocation</a></pre>
+      </article>
     </section>
+
+    <footer class="status">STATUS: <span id="statusText">LOADING...</span></footer>
   </main>
-  <script src="./home.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
