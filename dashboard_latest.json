@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T19:43:45.379881Z",
+  "generated_at": "2026-02-16T19:44:17.851751Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -63,422 +63,450 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-16T19:43:45.300085Z",
+    "last_updated": "2026-02-16T19:44:16.929036Z",
     "focused_market_count_last_cycle": 3,
     "recent_cycles": [
       {
-        "time": "2026-02-16T19:43:34.169551Z",
+        "time": "2026-02-16T19:44:05.742421Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
-        "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 10.0,
-        "total_pnl_cents": -542.0,
+        "closed": [
+          {
+            "time": "2026-02-16T19:44:05.720431Z",
+            "ticker": "KXBTC15M-26FEB161445-45",
+            "asset": "BTC",
+            "strategy": "spot_edge",
+            "side": "YES",
+            "qty": 1.0,
+            "entry": 70.0,
+            "exit": 98.0,
+            "pnl_cents": 28.0,
+            "reason": "take_profit"
+          }
+        ],
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=81 ya=85 mark=81 entry=70 pnl=11.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=86s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=98 ya=99 mark=98 entry=70 pnl=28.0 tp_level=98 tp=True stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=55s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=55s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:35.183582Z",
+        "time": "2026-02-16T19:44:06.765547Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 10.0,
-        "total_pnl_cents": -542.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=81 ya=82 mark=81 entry=70 pnl=11.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=85s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=54s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=54s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:36.200263Z",
+        "time": "2026-02-16T19:44:07.786078Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=84s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=53s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=53s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:37.214078Z",
+        "time": "2026-02-16T19:44:08.798812Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=83s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=52s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=52s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:38.226871Z",
+        "time": "2026-02-16T19:44:09.810824Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=82s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=51s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=51s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:39.236580Z",
+        "time": "2026-02-16T19:44:10.832541Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=81s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=50s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=50s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:40.246414Z",
+        "time": "2026-02-16T19:44:11.845159Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=80s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=49s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=49s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:41.258651Z",
+        "time": "2026-02-16T19:44:12.861902Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=79s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=48s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=48s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:42.268724Z",
+        "time": "2026-02-16T19:44:13.876520Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=78s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:43.278459Z",
+        "time": "2026-02-16T19:44:14.892095Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=77s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:44.290119Z",
+        "time": "2026-02-16T19:44:15.919276Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=76s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       },
       {
-        "time": "2026-02-16T19:43:45.353552Z",
+        "time": "2026-02-16T19:44:16.942436Z",
         "strategy": "spot_edge",
         "focused_market_count": 3,
-        "open_positions": 2,
+        "open_positions": 1,
         "opened": [],
         "closed": [],
-        "realized_pnl_cents": -552.0,
-        "unrealized_pnl_cents": 14.0,
-        "total_pnl_cents": -538.0,
+        "realized_pnl_cents": -524.0,
+        "unrealized_pnl_cents": 24.0,
+        "total_pnl_cents": -500.0,
         "analysis": [
-          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-          "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=75s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+          "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+          "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+          "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
         ]
       }
     ],
     "by_strategy": {
       "spot_edge": {
         "active": true,
-        "last_updated": "2026-02-16T19:43:45.300085Z",
+        "last_updated": "2026-02-16T19:44:16.929036Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
           {
-            "time": "2026-02-16T19:43:34.169551Z",
+            "time": "2026-02-16T19:44:05.742421Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
-            "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 10.0,
-            "total_pnl_cents": -542.0,
+            "closed": [
+              {
+                "time": "2026-02-16T19:44:05.720431Z",
+                "ticker": "KXBTC15M-26FEB161445-45",
+                "asset": "BTC",
+                "strategy": "spot_edge",
+                "side": "YES",
+                "qty": 1.0,
+                "entry": 70.0,
+                "exit": 98.0,
+                "pnl_cents": 28.0,
+                "reason": "take_profit"
+              }
+            ],
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=81 ya=85 mark=81 entry=70 pnl=11.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=86s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=98 ya=99 mark=98 entry=70 pnl=28.0 tp_level=98 tp=True stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=55s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=55s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:35.183582Z",
+            "time": "2026-02-16T19:44:06.765547Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 10.0,
-            "total_pnl_cents": -542.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=81 ya=82 mark=81 entry=70 pnl=11.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=85s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=54s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=54s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:36.200263Z",
+            "time": "2026-02-16T19:44:07.786078Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=84s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=53s yb=98 ya=99 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=53s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:37.214078Z",
+            "time": "2026-02-16T19:44:08.798812Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=83s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=52s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=52s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:38.226871Z",
+            "time": "2026-02-16T19:44:09.810824Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=82s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=51s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=51s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:39.236580Z",
+            "time": "2026-02-16T19:44:10.832541Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=81s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=50s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=50s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:40.246414Z",
+            "time": "2026-02-16T19:44:11.845159Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=80s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=49s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=49s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:41.258651Z",
+            "time": "2026-02-16T19:44:12.861902Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=79s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=48s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=48s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:42.268724Z",
+            "time": "2026-02-16T19:44:13.876520Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=78s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:43.278459Z",
+            "time": "2026-02-16T19:44:14.892095Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=77s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:44.290119Z",
+            "time": "2026-02-16T19:44:15.919276Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=76s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           },
           {
-            "time": "2026-02-16T19:43:45.353552Z",
+            "time": "2026-02-16T19:44:16.942436Z",
             "strategy": "spot_edge",
             "focused_market_count": 3,
-            "open_positions": 2,
+            "open_positions": 1,
             "opened": [],
             "closed": [],
-            "realized_pnl_cents": -552.0,
-            "unrealized_pnl_cents": 14.0,
-            "total_pnl_cents": -538.0,
+            "realized_pnl_cents": -524.0,
+            "unrealized_pnl_cents": 24.0,
+            "total_pnl_cents": -500.0,
             "analysis": [
-              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-              "EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=75s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+              "EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+              "ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+              "ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
             ]
           }
         ],
-        "open_positions": 2,
-        "total_pnl_cents": -538.0
+        "open_positions": 1,
+        "total_pnl_cents": -500.0
       }
     }
   },
   "performance": {
-    "open_positions": 2,
+    "open_positions": 1,
     "realized_pnl_cents": 0,
     "unrealized_pnl_cents": 0,
-    "total_pnl_cents": -552.0,
-    "trades_total": 84,
-    "wins": 37,
+    "total_pnl_cents": -524.0,
+    "trades_total": 85,
+    "wins": 38,
     "losses": 47,
-    "win_rate": 44.0,
+    "win_rate": 44.7,
     "by_asset": {
       "BTC": {
-        "trades": 29,
-        "wins": 13,
+        "trades": 30,
+        "wins": 14,
         "losses": 16,
-        "pnl_cents": -231.0,
-        "win_rate": 44.8
+        "pnl_cents": -203.0,
+        "win_rate": 46.7
       },
       "ETH": {
         "trades": 28,
@@ -497,11 +525,11 @@
     },
     "by_strategy": {
       "spot_edge": {
-        "trades": 84,
-        "wins": 37,
+        "trades": 85,
+        "wins": 38,
         "losses": 47,
-        "win_rate": 44.0,
-        "pnl_cents": -552.0
+        "win_rate": 44.7,
+        "pnl_cents": -524.0
       }
     }
   },
@@ -514,44 +542,16 @@
       "side": "YES",
       "qty": 1,
       "entry_price": 69.0,
-      "mark_price": 68.0,
-      "unrealized_pnl_cents": -1.0,
+      "mark_price": 93.0,
+      "unrealized_pnl_cents": 24.0,
       "signal": {
         "ttc_sec": 605,
         "yes_ask": 69.0,
         "yes_bid": 64.0
       }
-    },
-    "spot_edge:KXBTC15M-26FEB161445-45": {
-      "opened_at": "2026-02-16T19:36:53.137035Z",
-      "asset": "BTC",
-      "title": "BTC price up in next 15 mins?",
-      "strategy": "spot_edge",
-      "side": "YES",
-      "qty": 1,
-      "entry_price": 70.0,
-      "mark_price": 85.0,
-      "unrealized_pnl_cents": 15.0,
-      "signal": {
-        "ttc_sec": 487,
-        "yes_ask": 70.0,
-        "yes_bid": 69.0
-      }
     }
   },
   "recent_trades": [
-    {
-      "time": "2026-02-16T17:15:29.004886Z",
-      "ticker": "KXETH15M-26FEB161230-30",
-      "asset": "ETH",
-      "strategy": "spot_edge",
-      "side": "NO",
-      "qty": 1.0,
-      "entry": 66.0,
-      "exit": 45.0,
-      "pnl_cents": -21.0,
-      "reason": "flip_stop"
-    },
     {
       "time": "2026-02-16T17:22:50.667380Z",
       "ticker": "KXBTC15M-26FEB161230-30",
@@ -1019,6 +1019,18 @@
       "exit": 98.0,
       "pnl_cents": 33.0,
       "reason": "take_profit"
+    },
+    {
+      "time": "2026-02-16T19:44:05.720431Z",
+      "ticker": "KXBTC15M-26FEB161445-45",
+      "asset": "BTC",
+      "strategy": "spot_edge",
+      "side": "YES",
+      "qty": 1.0,
+      "entry": 70.0,
+      "exit": 98.0,
+      "pnl_cents": 28.0,
+      "reason": "take_profit"
     }
   ],
   "guardrails": {
@@ -1058,26 +1070,26 @@
   },
   "running_logs": {
     "spot_edge": [
-      "[2026-02-16T19:43:41.258651Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-538.0c",
-      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-      "  EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=79s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
-      "[2026-02-16T19:43:42.268724Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-538.0c",
-      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-      "  EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=78s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
-      "[2026-02-16T19:43:43.278459Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-538.0c",
-      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-      "  EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=77s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
-      "[2026-02-16T19:43:44.290119Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-538.0c",
-      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-      "  EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=76s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
-      "[2026-02-16T19:43:45.353552Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-538.0c",
-      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=68 ya=73 mark=68 entry=69 pnl=-1.0 tp_level=98 tp=False stop=False",
-      "  EXIT_CHECK KXBTC15M-26FEB161445-45 side=YES yb=85 ya=86 mark=85 entry=70 pnl=15.0 tp_level=98 tp=False stop=False",
-      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=75s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']"
+      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+      "  ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=47s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "[2026-02-16T19:44:14.892095Z] TTC_LOOP open=1 focused=3 opened=0 closed=0 pnl=-500.0c",
+      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+      "  ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=46s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "[2026-02-16T19:44:15.919276Z] TTC_LOOP open=1 focused=3 opened=0 closed=0 pnl=-500.0c",
+      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+      "  ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=45s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "[2026-02-16T19:44:16.942436Z] TTC_LOOP open=1 focused=3 opened=0 closed=0 pnl=-500.0c",
+      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=93 ya=96 mark=93 entry=69 pnl=24.0 tp_level=98 tp=False stop=False",
+      "  ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=44s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "[2026-02-16T19:44:17.976899Z] TTC_LOOP open=0 focused=3 opened=0 closed=1 pnl=-494.0c",
+      "  EXIT_CHECK KXSOL15M-26FEB161445-45 side=YES yb=99 ya=100 mark=99 entry=69 pnl=30.0 tp_level=98 tp=True stop=False",
+      "  ENTRY_CHECK KXBTC15M-26FEB161445-45 ttc=43s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXETH15M-26FEB161445-45 ttc=43s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['YES']",
+      "  ENTRY_CHECK KXSOL15M-26FEB161445-45 ttc=43s yb=99 ya=100 min_yes=65 max_yes_for_no=35 can_yes=False can_no=False entered=['NO', 'YES']"
     ]
   }
 }
