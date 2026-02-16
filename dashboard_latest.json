@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T13:20:11.645606Z",
+  "generated_at": "2026-02-16T13:20:27.985681Z",
   "strategy": {
     "name": "overreaction_reversion",
     "mode": "paper_only",
@@ -103,31 +103,9 @@
   },
   "loop": {
     "active": true,
-    "last_updated": "2026-02-16T13:20:09.720156Z",
+    "last_updated": "2026-02-16T13:20:19.728067Z",
     "focused_market_count_last_cycle": 6,
     "recent_cycles": [
-      {
-        "time": "2026-02-16T13:19:24.871603Z",
-        "strategy": "spot_edge",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 23.0,
-        "unrealized_pnl_cents": 6.0,
-        "total_pnl_cents": 29.0
-      },
-      {
-        "time": "2026-02-16T13:19:25.877648Z",
-        "strategy": "spot_edge",
-        "focused_market_count": 3,
-        "open_positions": 3,
-        "opened": [],
-        "closed": [],
-        "realized_pnl_cents": 23.0,
-        "unrealized_pnl_cents": 6.0,
-        "total_pnl_cents": 29.0
-      },
       {
         "time": "2026-02-16T13:19:26.892368Z",
         "strategy": "spot_edge",
@@ -351,25 +329,36 @@
         "realized_pnl_cents": -17.0,
         "unrealized_pnl_cents": -14.0,
         "total_pnl_cents": -31.0
+      },
+      {
+        "time": "2026-02-16T13:20:18.734445Z",
+        "strategy": "sports_odds_dislocation",
+        "focused_market_count": 0,
+        "open_positions": 0,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": 0.0,
+        "unrealized_pnl_cents": 0.0,
+        "total_pnl_cents": 0.0
+      },
+      {
+        "time": "2026-02-16T13:20:19.732887Z",
+        "strategy": "overreaction_reversion",
+        "focused_market_count": 3,
+        "open_positions": 1,
+        "opened": [],
+        "closed": [],
+        "realized_pnl_cents": -17.0,
+        "unrealized_pnl_cents": -14.0,
+        "total_pnl_cents": -31.0
       }
     ],
     "by_strategy": {
       "overreaction_reversion": {
         "active": true,
-        "last_updated": "2026-02-16T13:20:09.720156Z",
+        "last_updated": "2026-02-16T13:20:19.728067Z",
         "focused_market_count_last_cycle": 3,
         "recent_cycles": [
-          {
-            "time": "2026-02-16T13:18:19.576775Z",
-            "strategy": "overreaction_reversion",
-            "focused_market_count": 3,
-            "open_positions": 3,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": 24.0,
-            "unrealized_pnl_cents": 0.0,
-            "total_pnl_cents": 24.0
-          },
           {
             "time": "2026-02-16T13:18:29.595979Z",
             "strategy": "overreaction_reversion",
@@ -516,6 +505,17 @@
             "realized_pnl_cents": -17.0,
             "unrealized_pnl_cents": -14.0,
             "total_pnl_cents": -31.0
+          },
+          {
+            "time": "2026-02-16T13:20:19.732887Z",
+            "strategy": "overreaction_reversion",
+            "focused_market_count": 3,
+            "open_positions": 1,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": -17.0,
+            "unrealized_pnl_cents": -14.0,
+            "total_pnl_cents": -31.0
           }
         ],
         "open_positions": 1,
@@ -523,20 +523,9 @@
       },
       "sports_odds_dislocation": {
         "active": true,
-        "last_updated": "2026-02-16T13:20:08.731052Z",
+        "last_updated": "2026-02-16T13:20:18.733500Z",
         "focused_market_count_last_cycle": 0,
         "recent_cycles": [
-          {
-            "time": "2026-02-16T13:18:18.694785Z",
-            "strategy": "sports_odds_dislocation",
-            "focused_market_count": 0,
-            "open_positions": 0,
-            "opened": [],
-            "closed": [],
-            "realized_pnl_cents": 0.0,
-            "unrealized_pnl_cents": 0.0,
-            "total_pnl_cents": 0.0
-          },
           {
             "time": "2026-02-16T13:18:28.698482Z",
             "strategy": "sports_odds_dislocation",
@@ -649,6 +638,17 @@
           },
           {
             "time": "2026-02-16T13:20:08.731613Z",
+            "strategy": "sports_odds_dislocation",
+            "focused_market_count": 0,
+            "open_positions": 0,
+            "opened": [],
+            "closed": [],
+            "realized_pnl_cents": 0.0,
+            "unrealized_pnl_cents": 0.0,
+            "total_pnl_cents": 0.0
+          },
+          {
+            "time": "2026-02-16T13:20:18.734445Z",
             "strategy": "sports_odds_dislocation",
             "focused_market_count": 0,
             "open_positions": 0,
@@ -1134,7 +1134,6 @@
   },
   "running_logs": {
     "overreaction_reversion": [
-      "[2026-02-16T13:16:59.457388Z] TTC_LOOP open=0 focused=3 opened=0 closed=0 pnl=24.0c",
       "[2026-02-16T13:17:09.465878Z] TTC_LOOP open=0 focused=3 opened=0 closed=0 pnl=24.0c",
       "[2026-02-16T13:17:19.474647Z] TTC_LOOP open=2 focused=3 opened=2 closed=0 pnl=24.0c",
       "[2026-02-16T13:17:29.494066Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=15.0c",
@@ -1153,10 +1152,10 @@
       "[2026-02-16T13:19:39.679944Z] TTC_LOOP open=2 focused=3 opened=0 closed=1 pnl=4.0c",
       "[2026-02-16T13:19:49.699691Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=2.0c",
       "[2026-02-16T13:19:59.716547Z] TTC_LOOP open=2 focused=3 opened=0 closed=0 pnl=-14.0c",
-      "[2026-02-16T13:20:09.724530Z] TTC_LOOP open=1 focused=3 opened=0 closed=1 pnl=-31.0c"
+      "[2026-02-16T13:20:09.724530Z] TTC_LOOP open=1 focused=3 opened=0 closed=1 pnl=-31.0c",
+      "[2026-02-16T13:20:19.732887Z] TTC_LOOP open=1 focused=3 opened=0 closed=0 pnl=-31.0c"
     ],
     "sports_odds_dislocation": [
-      "[2026-02-16T13:16:58.665196Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
       "[2026-02-16T13:17:08.667298Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
       "[2026-02-16T13:17:18.670146Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
       "[2026-02-16T13:17:28.674135Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
@@ -1175,7 +1174,8 @@
       "[2026-02-16T13:19:38.723563Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
       "[2026-02-16T13:19:48.727535Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
       "[2026-02-16T13:19:58.729781Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
-      "[2026-02-16T13:20:08.731613Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c"
+      "[2026-02-16T13:20:08.731613Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c",
+      "[2026-02-16T13:20:18.734445Z] TTC_LOOP open=0 focused=0 opened=0 closed=0 pnl=0.0c"
     ],
     "spot_edge": [
       "[2026-02-16T13:19:14.779743Z] TTC_LOOP open=3 focused=3 opened=0 closed=0 pnl=28.0c",
